@@ -134,7 +134,8 @@
         <button class="btn btn-gold" type="submit" style="width:100%;margin-top:4px">Quiero el temario</button>
         <p class="note">🔒 Tus datos están seguros. Te contactamos solo sobre este programa.</p>
       </form>
-      <div id="thanks" class="ok hidden">✅ <b>¡Listo!</b> Recibimos tus datos. Te enviamos el temario y un asesor te contactará. Abajo puedes asegurar tu lugar.</div>
+      <div id="verifybox" class="hidden" style="margin-top:18px"></div>
+  <div id="thanks" class="ok hidden">✅ <b>¡Listo!</b> Recibimos tus datos. Te enviamos el temario y un asesor te contactará. Abajo puedes asegurar tu lugar.</div>
     </div>
     <div class="card">
       <div class="lab">Asegura tu lugar</div>
@@ -173,5 +174,15 @@ async function submitLead(e){e.preventDefault();const f=e.target,data=Object.fro
  if(COURSE.folleto)window.open(COURSE.folleto,'_blank');return false;}
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* === Verificación Twilio Verify (SMS) === */
+const VURL="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/verify-lead";
+const VKEY=SB_KEY;
+let LEAD=null;
+async function vpost(p){const r=await fetch(VURL,{method:"POST",headers:{"Content-Type":"application/json","apikey":VKEY,"Authorization":"Bearer "+VKEY},body:JSON.stringify(p)});return r.json();}
+async function submitLead(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));let phone=(d.whatsapp||"").trim().replace(/[\s\-()]/g,"");if(phone&&!phone.startsWith("+"))phone="+52"+phone.replace(/^0+/,"");if(!phone||phone.length<10){alert("Escribe tu WhatsApp/telefono con lada (ej. +52...) para verificarte.");return false;}d.phone=phone;d.curso=COURSE.id;d.folleto=COURSE.folleto;LEAD=d;const b=f.querySelector('button[type=submit]');const t0=b.textContent;b.textContent="Enviando codigo...";b.disabled=true;let res;try{res=await vpost({action:"start",phone:phone,channel:"sms"});}catch(_){res={};}if(res&&(res.status==="pending"||res.ok)){f.classList.add('hidden');showCode(phone);}else{b.textContent=t0;b.disabled=false;alert("No pudimos enviar el codigo. Revisa tu numero (con lada, ej +52).");}return false;}
+function showCode(phone){const c=document.getElementById('verifybox');c.innerHTML='<p style="margin-bottom:12px;font-size:15px">📲 Te enviamos un codigo por SMS a <b>'+phone+'</b>. Ingresalo para recibir tu temario:</p><input id="otp" inputmode="numeric" autocomplete="one-time-code" placeholder="Codigo de 6 digitos" style="width:100%;padding:13px 15px;border:1px solid #d8dee9;border-radius:12px;font-size:22px;text-align:center;letter-spacing:8px;margin-bottom:12px;font-family:inherit"><button class="btn btn-gold" type="button" style="width:100%" onclick="verifyCode()">Verificar y recibir temario</button><p id="vmsg" class="note"></p>';c.classList.remove('hidden');document.getElementById('otp').focus();}
+async function verifyCode(){const code=(document.getElementById('otp').value||"").trim();const m=document.getElementById('vmsg');if(code.length<4){m.textContent="Escribe el codigo completo.";return;}m.textContent="Verificando...";let res;try{res=await vpost({action:"check",phone:LEAD.phone,code:code,email:LEAD.email,nombre:LEAD.nombre,apellido:LEAD.apellido,puesto:LEAD.puesto,empresa:LEAD.empresa,curso:COURSE.id,folleto:COURSE.folleto});}catch(_){res={};}if(res&&res.verified){document.getElementById('verifybox').classList.add('hidden');document.getElementById('thanks').classList.remove('hidden');if(COURSE.folleto)window.open(COURSE.folleto,'_blank');}else{m.textContent="Codigo incorrecto o expirado. Intenta de nuevo.";}}
+
 </script>
 </body></html>
