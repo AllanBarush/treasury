@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Treasury, Cash Management & Finance Operations | RiskMathics</title>
+<meta name="description" content="Programa ejecutivo que forma al tesorero corporativo moderno: liquidez, cash management, FX, funding, riesgo financiero y la operación end-to-end de la tesorería. 120 horas · 8 módulos · Certificación. Inicio Agosto 2026.">
+<style>
+ :root{
+   --ink:#0a1424;--ink2:#5a6577;--line:#e8ebf0;--bg:#ffffff;--soft:#f6f8fb;
+   --navy:#0a1f3c;--navy2:#12305c;--gold:#c8a04a;--gold2:#e3c578;
+ }
+ *{box-sizing:border-box;margin:0;padding:0}
+ html{scroll-behavior:smooth}
+ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter','Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55;letter-spacing:-.01em}
+ .container{max-width:1080px;margin:0 auto;padding:0 28px}
+ a{color:inherit;text-decoration:none}
+ .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(14px);background:rgba(255,255,255,.78);border-bottom:1px solid var(--line)}
+ .nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+ .brand{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--navy)}
+ .nav a.cta{font-size:13px;font-weight:600;color:#fff;background:var(--navy);padding:9px 18px;border-radius:100px;transition:.25s}
+ .nav a.cta:hover{background:var(--navy2);transform:translateY(-1px)}
+ .hero{background:linear-gradient(155deg,#12305c 0%,#0a1f3c 45%,#070f1d 100%);color:#fff;position:relative;overflow:hidden}
+ .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.65}
+ .hero .container{padding-top:92px;padding-bottom:96px;position:relative}
+ .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;color:var(--gold2);font-weight:600;text-transform:uppercase}
+ .eyebrow:before{content:"";width:26px;height:1px;background:var(--gold)}
+ h1{font-size:60px;line-height:1.02;font-weight:600;letter-spacing:-.03em;margin:22px 0 0;max-width:14ch}
+ .hero p.dek{font-size:20px;color:#c2cee0;font-weight:400;margin-top:22px;max-width:46ch;line-height:1.5}
+ .hero .meta{margin-top:34px;display:flex;gap:30px;flex-wrap:wrap;font-size:14px;color:#9fb1cc}
+ .hero .meta b{color:#fff;font-weight:600}
+ .hero .actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+ .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:600;padding:15px 30px;border-radius:100px;cursor:pointer;border:none;transition:.25s;letter-spacing:-.01em}
+ .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1404;box-shadow:0 8px 30px rgba(200,160,74,.32)}
+ .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(200,160,74,.42)}
+ .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2)}
+ .btn-ghost:hover{background:rgba(255,255,255,.14)}
+ .btn-dark{background:var(--navy);color:#fff}.btn-dark:hover{background:var(--navy2);transform:translateY(-2px)}
+ .stats{border-bottom:1px solid var(--line);background:var(--soft)}
+ .stats .container{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:38px 28px}
+ .stat .n{font-size:38px;font-weight:600;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
+ .stat .l{font-size:13px;color:var(--ink2);margin-top:4px}
+ section.block{padding:88px 0;border-bottom:1px solid var(--line)}
+ .lab{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+ h2{font-size:34px;font-weight:600;letter-spacing:-.025em;margin:14px 0 0;max-width:20ch}
+ .intro{font-size:18px;color:#3b4556;max-width:62ch;margin-top:22px;line-height:1.65}
+ .mods{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ .mod{border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:#fff;transition:.3s;display:flex;gap:14px;align-items:flex-start}
+ .mod:hover{border-color:#cdd6e4;box-shadow:0 14px 40px rgba(10,31,60,.08);transform:translateY(-3px)}
+ .mod .dot{flex:none;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#eef3fb,#dde7f6);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:700;font-size:14px}
+ .mod p{font-size:14.5px;color:#2c3950;line-height:1.5}
+ .mod p b{color:var(--ink)}
+ .split{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:start}
+ .card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:0 30px 70px rgba(10,31,60,.07)}
+ form{display:grid;gap:14px}
+ .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ label{font-size:12.5px;font-weight:600;color:#46526a;display:block;margin-bottom:6px;letter-spacing:.01em}
+ input{width:100%;padding:13px 15px;border:1px solid #d8dee9;border-radius:12px;font-size:15px;font-family:inherit;transition:.2s;background:#fcfdff}
+ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(18,48,92,.08);background:#fff}
+ .note{font-size:12px;color:#8a94a6;margin-top:6px}
+ .ok{background:linear-gradient(135deg,#f0fff7,#e7faf0);border:1px solid #b6ebcf;color:#0c6b3f;padding:22px;border-radius:18px;font-size:15px;line-height:1.5}
+ .hidden{display:none}
+ .pricewrap{display:flex;align-items:baseline;gap:10px;margin:6px 0 18px}
+ .price{font-size:42px;font-weight:600;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
+ .price small{font-size:15px;color:var(--ink2);font-weight:500}
+ .feat-min{list-style:none;margin:18px 0;display:grid;gap:10px}
+ .feat-min li{font-size:14.5px;color:#3b4556;padding-left:26px;position:relative}
+ .feat-min li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+ .pay{display:grid;gap:12px;margin-top:22px}
+ .trust{font-size:12px;color:#9aa4b4;margin-top:14px;text-align:center}
+ footer{background:var(--navy);color:#9fb1cc;padding:48px 0}
+ footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
+ footer a{color:#cdd9ec;border-bottom:1px solid transparent;transition:.2s}footer a:hover{border-color:#cdd9ec}
+ .reveal{opacity:0;transform:translateY(18px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+ .reveal.in{opacity:1;transform:none}
+ @media(max-width:860px){h1{font-size:40px}.stats .container{grid-template-columns:1fr 1fr}.mods,.split,.frow{grid-template-columns:1fr}.hero .container{padding-top:64px;padding-bottom:68px}section.block{padding:60px 0}}
+</style></head>
+<body>
+
+<div class="nav"><div class="container">
+  <div class="brand">RISKMATHICS</div>
+  <a class="cta" href="#inscripcion">Inscríbete</a>
+</div></div>
+
+<header class="hero"><div class="container">
+  <span class="eyebrow">Programa Ejecutivo · Certificación en Tesorería</span>
+  <h1>Treasury, Cash Management & Finance Operations</h1>
+  <p class="dek">Forma al tesorero corporativo moderno: dueño de la <b style="color:#fff">liquidez, el funding, el riesgo financiero y la operación end-to-end</b> de la tesorería.</p>
+  <div class="meta"><span><b>Inicio</b> · Agosto 2026</span><span><b>120</b> horas</span><span><b>8</b> módulos</span><span><b>Modalidad</b> · Virtual LIVE</span></div>
+  <div class="actions">
+    <a class="btn btn-gold" href="#inscripcion">Recibir el temario</a>
+    <a class="btn btn-ghost" href="#programa">Ver el programa</a>
+  </div>
+</div></header>
+
+<div class="stats"><div class="container">
+  <div class="stat"><div class="n">120</div><div class="l">horas de formación</div></div>
+  <div class="stat"><div class="n">8</div><div class="l">módulos integrados</div></div>
+  <div class="stat"><div class="n">30+</div><div class="l">casos y plantillas</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">Capstone de Tesorería</div></div>
+</div></div>
+
+<section class="block" id="programa"><div class="container reveal">
+  <div class="lab">El programa</div>
+  <h2>La tesorería dejó de ser back office. Hoy decide la supervivencia de la empresa.</h2>
+  <p class="intro">Un recorrido formativo que convierte a la tesorería en el centro de control financiero de la organización: del <b>cash management diario</b> y el pronóstico de flujo, al <b>funding</b>, la gestión de <b>FX e interés</b>, la inversión de excedentes y el <b>gobierno operativo</b> de pagos. Con foco en el entorno mexicano y multinacional —SPEI, CoDi, SWIFT gpv, ISO 20022, banca electrónica y cuentas en USD— construido sobre casos reales, modelos en Excel/Python y plantillas que aplicas el lunes siguiente. Cierra con un <b>Capstone de política y modelo de tesorería</b> que integra todo el programa.</p>
+  <div class="mods">
+    <div class="mod"><div class="dot">01</div><p><b>Estrategia y Gobierno de Tesorería</b> — modelo operativo, organización (front/middle/back), políticas, KPIs y la tesorería como socio del CFO.</p></div>
+    <div class="mod"><div class="dot">02</div><p><b>Cash Management & Liquidez</b> — cash pooling, barridos, concentración de cuentas, banca electrónica, SPEI/CoDi y optimización del capital de trabajo.</p></div>
+    <div class="mod"><div class="dot">03</div><p><b>Cash Forecasting</b> — pronóstico de flujo directo e indirecto, escenarios, modelos en Excel/Python y disciplina de variaciones.</p></div>
+    <div class="mod"><div class="dot">04</div><p><b>Funding & Estructura de Capital</b> — líneas bancarias, papel comercial, factoraje, deuda y revolventes; costo de fondeo y covenants.</p></div>
+    <div class="mod"><div class="dot">05</div><p><b>Riesgo de Mercado en Tesorería</b> — exposición a FX y tasas, coberturas con forwards, swaps y opciones, contabilidad de coberturas y política de hedging.</p></div>
+    <div class="mod"><div class="dot">06</div><p><b>Inversión de Excedentes & Counterparty Risk</b> — money markets, reportos, fondos, mandato de inversión, riesgo de contraparte y límites.</p></div>
+    <div class="mod"><div class="dot">07</div><p><b>Operaciones, Pagos & Bank Relationship</b> — ciclo de pagos, ISO 20022/SWIFT, conciliación bancaria, fraude, controles SOX y KYC bancario.</p></div>
+    <div class="mod"><div class="dot">08</div><p><b>TMS, Automatización & Capstone</b> — sistemas de tesorería (TMS), conectividad host-to-host, dashboards y proyecto integrador de política y modelo.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="inscripcion"><div class="container reveal">
+  <div class="split">
+    <div>
+      <div class="lab">Inscripción</div>
+      <h2>Déjanos tus datos y recibe el temario completo</h2>
+      <p class="intro">Te enviamos el temario detallado y las opciones de inscripción. Sin compromiso — un asesor te contacta.</p>
+      <form id="lead" onsubmit="return submitLead(event)">
+        <div class="frow">
+          <div><label>Nombre</label><input name="nombre" required></div>
+          <div><label>Apellido</label><input name="apellido"></div>
+        </div>
+        <div><label>Email corporativo</label><input type="email" name="email" required></div>
+        <div class="frow">
+          <div><label>Puesto</label><input name="puesto"></div>
+          <div><label>Institución</label><input name="empresa"></div>
+        </div>
+        <div><label>WhatsApp</label><input name="whatsapp" placeholder="+52..."></div>
+        <button class="btn btn-gold" type="submit" style="width:100%;margin-top:4px">Quiero el temario</button>
+        <p class="note">🔒 Tus datos están seguros. Te contactamos solo sobre este programa.</p>
+      </form>
+      <div id="thanks" class="ok hidden">✅ <b>¡Listo!</b> Recibimos tus datos. Te enviamos el temario y un asesor te contactará. Abajo puedes asegurar tu lugar.</div>
+    </div>
+    <div class="card">
+      <div class="lab">Asegura tu lugar</div>
+      <div class="pricewrap"><span class="price">MXN $<span id="precio">—</span></span><small>+ IVA</small></div>
+      <ul class="feat-min">
+        <li>Acceso completo · 120 horas · 8 módulos</li>
+        <li>30+ casos, modelos en Excel/Python y plantillas</li>
+        <li>Certificación en Tesorería + Capstone integrador</li>
+        <li>6 meses sin intereses (PayPal) · Factura CFDI</li>
+      </ul>
+      <div class="pay">
+        <a class="btn btn-gold" id="paypal" href="#" target="_blank" rel="noopener">Pagar con PayPal · 6 MSI</a>
+        <a class="btn btn-dark" id="stripe" href="#" target="_blank" rel="noopener">Pagar con tarjeta · Stripe</a>
+      </div>
+      <p class="trust">100% seguro · SSL · PayPal Verified</p>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="container">
+  <div>RiskMathics Financial Institute · Learn. Apply. Profit.<br>Ciudad de México</div>
+  <div><a href="https://riskmathics.com">riskmathics.com</a></div>
+</div></footer>
+
+<script>
+const COURSE = { id:"treasury", nombre:"Treasury, Cash Management & Finance Operations",
+  precio:"65,000", paypal:"https://www.paypal.com/ncp/payment/2DMC99VTQLGMJ", stripe:"https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f",
+  folleto:"https://riskmathics-folletos-2026.s3.amazonaws.com/treasury-2026.pdf" };
+const SB_URL="",SB_KEY="";
+document.getElementById('precio').textContent=COURSE.precio||"—";
+if(COURSE.stripe)document.getElementById('stripe').href=COURSE.stripe;
+if(COURSE.paypal)document.getElementById('paypal').href=COURSE.paypal;else{var _p=document.getElementById('paypal');if(_p)_p.style.display='none';}
+async function submitLead(e){e.preventDefault();const f=e.target,data=Object.fromEntries(new FormData(f));data.curso=COURSE.id;
+ try{if(SB_URL)await fetch(SB_URL,{method:'POST',headers:{'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY},body:JSON.stringify(data)});}catch(err){}
+ f.classList.add('hidden');document.getElementById('thanks').classList.remove('hidden');
+ if(COURSE.folleto)window.open(COURSE.folleto,'_blank');return false;}
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body></html>
