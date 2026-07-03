@@ -1,188 +1,484 @@
 <!DOCTYPE html>
-<html lang="es"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Treasury, Cash Management & Finance Operations | RiskMathics</title>
-<meta name="description" content="Programa ejecutivo que forma al tesorero corporativo moderno: liquidez, cash management, FX, funding, riesgo financiero y la operación end-to-end de la tesorería. 120 horas · 8 módulos · Certificación. Inicio Agosto 2026.">
-<style>
- :root{
-   --ink:#0a1424;--ink2:#5a6577;--line:#e8ebf0;--bg:#ffffff;--soft:#f6f8fb;
-   --navy:#0a1f3c;--navy2:#12305c;--gold:#c8a04a;--gold2:#e3c578;
- }
- *{box-sizing:border-box;margin:0;padding:0}
- html{scroll-behavior:smooth}
- body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter','Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55;letter-spacing:-.01em}
- .container{max-width:1080px;margin:0 auto;padding:0 28px}
- a{color:inherit;text-decoration:none}
- .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(14px);background:rgba(255,255,255,.78);border-bottom:1px solid var(--line)}
- .nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
- .brand{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--navy)}
- .nav a.cta{font-size:13px;font-weight:600;color:#fff;background:var(--navy);padding:9px 18px;border-radius:100px;transition:.25s}
- .nav a.cta:hover{background:var(--navy2);transform:translateY(-1px)}
- .hero{background:linear-gradient(155deg,#12305c 0%,#0a1f3c 45%,#070f1d 100%);color:#fff;position:relative;overflow:hidden}
- .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.65}
- .hero .container{padding-top:92px;padding-bottom:96px;position:relative}
- .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;color:var(--gold2);font-weight:600;text-transform:uppercase}
- .eyebrow:before{content:"";width:26px;height:1px;background:var(--gold)}
- h1{font-size:60px;line-height:1.02;font-weight:600;letter-spacing:-.03em;margin:22px 0 0;max-width:14ch}
- .hero p.dek{font-size:20px;color:#c2cee0;font-weight:400;margin-top:22px;max-width:46ch;line-height:1.5}
- .hero .meta{margin-top:34px;display:flex;gap:30px;flex-wrap:wrap;font-size:14px;color:#9fb1cc}
- .hero .meta b{color:#fff;font-weight:600}
- .hero .actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
- .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:600;padding:15px 30px;border-radius:100px;cursor:pointer;border:none;transition:.25s;letter-spacing:-.01em}
- .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1404;box-shadow:0 8px 30px rgba(200,160,74,.32)}
- .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(200,160,74,.42)}
- .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2)}
- .btn-ghost:hover{background:rgba(255,255,255,.14)}
- .btn-dark{background:var(--navy);color:#fff}.btn-dark:hover{background:var(--navy2);transform:translateY(-2px)}
- .stats{border-bottom:1px solid var(--line);background:var(--soft)}
- .stats .container{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:38px 28px}
- .stat .n{font-size:38px;font-weight:600;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
- .stat .l{font-size:13px;color:var(--ink2);margin-top:4px}
- section.block{padding:88px 0;border-bottom:1px solid var(--line)}
- .lab{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
- h2{font-size:34px;font-weight:600;letter-spacing:-.025em;margin:14px 0 0;max-width:20ch}
- .intro{font-size:18px;color:#3b4556;max-width:62ch;margin-top:22px;line-height:1.65}
- .mods{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
- .mod{border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:#fff;transition:.3s;display:flex;gap:14px;align-items:flex-start}
- .mod:hover{border-color:#cdd6e4;box-shadow:0 14px 40px rgba(10,31,60,.08);transform:translateY(-3px)}
- .mod .dot{flex:none;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#eef3fb,#dde7f6);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:700;font-size:14px}
- .mod p{font-size:14.5px;color:#2c3950;line-height:1.5}
- .mod p b{color:var(--ink)}
- .split{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:start}
- .card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:0 30px 70px rgba(10,31,60,.07)}
- form{display:grid;gap:14px}
- .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
- label{font-size:12.5px;font-weight:600;color:#46526a;display:block;margin-bottom:6px;letter-spacing:.01em}
- input{width:100%;padding:13px 15px;border:1px solid #d8dee9;border-radius:12px;font-size:15px;font-family:inherit;transition:.2s;background:#fcfdff}
- input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(18,48,92,.08);background:#fff}
- .note{font-size:12px;color:#8a94a6;margin-top:6px}
- .ok{background:linear-gradient(135deg,#f0fff7,#e7faf0);border:1px solid #b6ebcf;color:#0c6b3f;padding:22px;border-radius:18px;font-size:15px;line-height:1.5}
- .hidden{display:none}
- .pricewrap{display:flex;align-items:baseline;gap:10px;margin:6px 0 18px}
- .price{font-size:42px;font-weight:600;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
- .price small{font-size:15px;color:var(--ink2);font-weight:500}
- .feat-min{list-style:none;margin:18px 0;display:grid;gap:10px}
- .feat-min li{font-size:14.5px;color:#3b4556;padding-left:26px;position:relative}
- .feat-min li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
- .pay{display:grid;gap:12px;margin-top:22px}
- .trust{font-size:12px;color:#9aa4b4;margin-top:14px;text-align:center}
- footer{background:var(--navy);color:#9fb1cc;padding:48px 0}
- footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
- footer a{color:#cdd9ec;border-bottom:1px solid transparent;transition:.2s}footer a:hover{border-color:#cdd9ec}
- .reveal{opacity:0;transform:translateY(18px);transition:.7s cubic-bezier(.2,.7,.2,1)}
- .reveal.in{opacity:1;transform:none}
- @media(max-width:860px){h1{font-size:40px}.stats .container{grid-template-columns:1fr 1fr}.mods,.split,.frow{grid-template-columns:1fr}.hero .container{padding-top:64px;padding-bottom:68px}section.block{padding:60px 0}}
-</style></head>
-<body>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treasury, Finance Operations & Cash Management | RiskMathics Financial Institute</title>
+<meta name="description" content="Programa ejecutivo Virtual Live de RiskMathics: tesorería, cash management, previsión de flujo, riesgo financiero, financiamiento, inversión de excedentes, sistemas bancarios y ciberseguridad. 8 sesiones · 16 horas · 10 módulos. Impartido por Antonio Castaño (ex Director de Tesorería CIBanco, MBA Stanford).">
+<meta property="og:title" content="Treasury, Finance Operations & Cash Management — RiskMathics">
+<meta property="og:description" content="El programa ejecutivo que convierte a la tesorería en el centro de control financiero de tu organización. Virtual Live · 8 sesiones · 10 módulos.">
+<meta property="og:type" content="website">
 
-<div class="nav"><div class="container">
-  <div class="brand">RISKMATHICS</div>
-  <a class="cta" href="#inscripcion">Inscríbete</a>
-</div></div>
-
-<header class="hero"><div class="container">
-  <span class="eyebrow">Programa Ejecutivo · Certificación en Tesorería</span>
-  <h1>Treasury, Cash Management & Finance Operations</h1>
-  <p class="dek">Forma al tesorero corporativo moderno: dueño de la <b style="color:#fff">liquidez, el funding, el riesgo financiero y la operación end-to-end</b> de la tesorería.</p>
-  <div class="meta"><span><b>Inicio</b> · Agosto 2026</span><span><b>120</b> horas</span><span><b>8</b> módulos</span><span><b>Modalidad</b> · Virtual LIVE</span></div>
-  <div class="actions">
-    <a class="btn btn-gold" href="#inscripcion">Recibir el temario</a>
-    <a class="btn btn-ghost" href="#programa">Ver el programa</a>
-  </div>
-</div></header>
-
-<div class="stats"><div class="container">
-  <div class="stat"><div class="n">120</div><div class="l">horas de formación</div></div>
-  <div class="stat"><div class="n">8</div><div class="l">módulos integrados</div></div>
-  <div class="stat"><div class="n">30+</div><div class="l">casos y plantillas</div></div>
-  <div class="stat"><div class="n">1</div><div class="l">Capstone de Tesorería</div></div>
-</div></div>
-
-<section class="block" id="programa"><div class="container reveal">
-  <div class="lab">El programa</div>
-  <h2>La tesorería dejó de ser back office. Hoy decide la supervivencia de la empresa.</h2>
-  <p class="intro">Un recorrido formativo que convierte a la tesorería en el centro de control financiero de la organización: del <b>cash management diario</b> y el pronóstico de flujo, al <b>funding</b>, la gestión de <b>FX e interés</b>, la inversión de excedentes y el <b>gobierno operativo</b> de pagos. Con foco en el entorno mexicano y multinacional —SPEI, CoDi, SWIFT gpv, ISO 20022, banca electrónica y cuentas en USD— construido sobre casos reales, modelos en Excel/Python y plantillas que aplicas el lunes siguiente. Cierra con un <b>Capstone de política y modelo de tesorería</b> que integra todo el programa.</p>
-  <div class="mods">
-    <div class="mod"><div class="dot">01</div><p><b>Estrategia y Gobierno de Tesorería</b> — modelo operativo, organización (front/middle/back), políticas, KPIs y la tesorería como socio del CFO.</p></div>
-    <div class="mod"><div class="dot">02</div><p><b>Cash Management & Liquidez</b> — cash pooling, barridos, concentración de cuentas, banca electrónica, SPEI/CoDi y optimización del capital de trabajo.</p></div>
-    <div class="mod"><div class="dot">03</div><p><b>Cash Forecasting</b> — pronóstico de flujo directo e indirecto, escenarios, modelos en Excel/Python y disciplina de variaciones.</p></div>
-    <div class="mod"><div class="dot">04</div><p><b>Funding & Estructura de Capital</b> — líneas bancarias, papel comercial, factoraje, deuda y revolventes; costo de fondeo y covenants.</p></div>
-    <div class="mod"><div class="dot">05</div><p><b>Riesgo de Mercado en Tesorería</b> — exposición a FX y tasas, coberturas con forwards, swaps y opciones, contabilidad de coberturas y política de hedging.</p></div>
-    <div class="mod"><div class="dot">06</div><p><b>Inversión de Excedentes & Counterparty Risk</b> — money markets, reportos, fondos, mandato de inversión, riesgo de contraparte y límites.</p></div>
-    <div class="mod"><div class="dot">07</div><p><b>Operaciones, Pagos & Bank Relationship</b> — ciclo de pagos, ISO 20022/SWIFT, conciliación bancaria, fraude, controles SOX y KYC bancario.</p></div>
-    <div class="mod"><div class="dot">08</div><p><b>TMS, Automatización & Capstone</b> — sistemas de tesorería (TMS), conectividad host-to-host, dashboards y proyecto integrador de política y modelo.</p></div>
-  </div>
-</div></section>
-
-<section class="block" id="inscripcion"><div class="container reveal">
-  <div class="split">
-    <div>
-      <div class="lab">Inscripción</div>
-      <h2>Déjanos tus datos y recibe el temario completo</h2>
-      <p class="intro">Te enviamos el temario detallado y las opciones de inscripción. Sin compromiso — un asesor te contacta.</p>
-      <form id="lead" onsubmit="return submitLead(event)">
-        <div class="frow">
-          <div><label>Nombre</label><input name="nombre" required></div>
-          <div><label>Apellido</label><input name="apellido"></div>
-        </div>
-        <div><label>Email corporativo</label><input type="email" name="email" required></div>
-        <div class="frow">
-          <div><label>Puesto</label><input name="puesto"></div>
-          <div><label>Institución</label><input name="empresa"></div>
-        </div>
-        <div><label>WhatsApp</label><input name="whatsapp" placeholder="+52..."></div>
-        <button class="btn btn-gold" type="submit" style="width:100%;margin-top:4px">Quiero el temario</button>
-        <p class="note">🔒 Tus datos están seguros. Te contactamos solo sobre este programa.</p>
-      </form>
-      <div id="verifybox" class="hidden" style="margin-top:18px"></div>
-  <div id="thanks" class="ok hidden">✅ <b>¡Listo!</b> Recibimos tus datos. Te enviamos el temario y un asesor te contactará. Abajo puedes asegurar tu lugar.</div>
-    </div>
-    <div class="card">
-      <div class="lab">Asegura tu lugar</div>
-      <div class="pricewrap"><span class="price">MXN $<span id="precio">—</span></span><small>+ IVA</small></div>
-      <ul class="feat-min">
-        <li>Acceso completo · 120 horas · 8 módulos</li>
-        <li>30+ casos, modelos en Excel/Python y plantillas</li>
-        <li>Certificación en Tesorería + Capstone integrador</li>
-        <li>6 meses sin intereses (PayPal) · Factura CFDI</li>
-      </ul>
-      <div class="pay">
-        <a class="btn btn-gold" id="paypal" href="#" target="_blank" rel="noopener">Pagar con PayPal · 6 MSI</a>
-        <a class="btn btn-dark" id="stripe" href="#" target="_blank" rel="noopener">Pagar con tarjeta · Stripe</a>
-      </div>
-      <p class="trust">100% seguro · SSL · PayPal Verified</p>
-    </div>
-  </div>
-</div></section>
-
-<footer><div class="container">
-  <div>RiskMathics Financial Institute · Learn. Apply. Profit.<br>Ciudad de México</div>
-  <div><a href="https://riskmathics.com">riskmathics.com</a></div>
-</div></footer>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Google Fonts: Fraunces (serif display) + Inter (sans) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script>
-const COURSE = { id:"treasury", nombre:"Treasury, Cash Management & Finance Operations",
-  precio:"65,000", paypal:"https://www.paypal.com/ncp/payment/2DMC99VTQLGMJ", stripe:"https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f",
-  folleto:"https://riskmathics-folletos-2026.s3.amazonaws.com/treasury-2026.pdf" };
-const SB_URL="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/lead-distributor",SB_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U";
-document.getElementById('precio').textContent=COURSE.precio||"—";
-if(COURSE.stripe)document.getElementById('stripe').href=COURSE.stripe;
-if(COURSE.paypal)document.getElementById('paypal').href=COURSE.paypal;else{var _p=document.getElementById('paypal');if(_p)_p.style.display='none';}
-async function submitLead(e){e.preventDefault();const f=e.target,data=Object.fromEntries(new FormData(f));data.curso=COURSE.id;
- try{if(SB_URL)await fetch(SB_URL,{method:'POST',headers:{'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY},body:JSON.stringify(data)});}catch(err){}
- f.classList.add('hidden');document.getElementById('thanks').classList.remove('hidden');
- if(COURSE.folleto)window.open(COURSE.folleto,'_blank');return false;}
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* === Verificación Twilio Verify (SMS) === */
-const VURL="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/verify-lead";
-const VKEY=SB_KEY;
-let LEAD=null;
-async function vpost(p){const r=await fetch(VURL,{method:"POST",headers:{"Content-Type":"application/json","apikey":VKEY,"Authorization":"Bearer "+VKEY},body:JSON.stringify(p)});return r.json();}
-async function submitLead(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));let phone=(d.whatsapp||"").trim().replace(/[\s\-()]/g,"");if(phone&&!phone.startsWith("+"))phone="+52"+phone.replace(/^0+/,"");if(!phone||phone.length<10){alert("Escribe tu WhatsApp/telefono con lada (ej. +52...) para verificarte.");return false;}d.phone=phone;d.curso=COURSE.id;d.folleto=COURSE.folleto;LEAD=d;const b=f.querySelector('button[type=submit]');const t0=b.textContent;b.textContent="Enviando codigo...";b.disabled=true;let res;try{res=await vpost({action:"start",phone:phone,channel:"sms"});}catch(_){res={};}if(res&&(res.status==="pending"||res.ok)){f.classList.add('hidden');showCode(phone);}else{b.textContent=t0;b.disabled=false;alert("No pudimos enviar el codigo. Revisa tu numero (con lada, ej +52).");}return false;}
-function showCode(phone){const c=document.getElementById('verifybox');c.innerHTML='<p style="margin-bottom:12px;font-size:15px">📲 Te enviamos un codigo por SMS a <b>'+phone+'</b>. Ingresalo para recibir tu temario:</p><input id="otp" inputmode="numeric" autocomplete="one-time-code" placeholder="Codigo de 6 digitos" style="width:100%;padding:13px 15px;border:1px solid #d8dee9;border-radius:12px;font-size:22px;text-align:center;letter-spacing:8px;margin-bottom:12px;font-family:inherit"><button class="btn btn-gold" type="button" style="width:100%" onclick="verifyCode()">Verificar y recibir temario</button><p id="vmsg" class="note"></p>';c.classList.remove('hidden');document.getElementById('otp').focus();}
-async function verifyCode(){const code=(document.getElementById('otp').value||"").trim();const m=document.getElementById('vmsg');if(code.length<4){m.textContent="Escribe el codigo completo.";return;}m.textContent="Verificando...";let res;try{res=await vpost({action:"check",phone:LEAD.phone,code:code,email:LEAD.email,nombre:LEAD.nombre,apellido:LEAD.apellido,puesto:LEAD.puesto,empresa:LEAD.empresa,curso:COURSE.id,folleto:COURSE.folleto});}catch(_){res={};}if(res&&res.verified){document.getElementById('verifybox').classList.add('hidden');document.getElementById('thanks').classList.remove('hidden');if(COURSE.folleto)window.open(COURSE.folleto,'_blank');}else{m.textContent="Codigo incorrecto o expirado. Intenta de nuevo.";}}
-
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        rm: {
+          navy:  '#0a1f3c',
+          navy2: '#12305c',
+          ink:   '#0a1424',
+          ink2:  '#5a6577',
+          gold:  '#c8a04a',
+          gold2: '#e3c578',
+          soft:  '#f6f8fb',
+          line:  '#e8ebf0'
+        }
+      },
+      fontFamily: {
+        sans:  ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
 </script>
-</body></html>
+
+<style>
+  html{scroll-behavior:smooth}
+  body{background:#ffffff;color:#0a1424;-webkit-font-smoothing:antialiased}
+  .chart-container{position:relative;width:100%;max-width:960px;margin:0 auto;height:44vh;max-height:460px;min-height:280px;background:#fff;border:1px solid #e8ebf0;border-radius:.9rem;padding:1.1rem;box-shadow:0 10px 34px rgba(10,31,60,.07)}
+  @media (max-width:768px){.chart-container{height:36vh}}
+  details.rm-acc{border-bottom:1px solid #e8ebf0}
+  details.rm-acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem .5rem;transition:background .2s}
+  details.rm-acc summary::-webkit-details-marker{display:none}
+  details.rm-acc summary:hover{background:#f6f8fb}
+  details.rm-acc summary .plus{flex:none;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#0a1f3c;background:linear-gradient(135deg,#eef3fb,#dde7f6);font-weight:700;font-size:18px;transition:transform .3s}
+  details.rm-acc[open] summary .plus{transform:rotate(45deg)}
+  .reveal{opacity:0;transform:translateY(16px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body class="font-sans">
+
+<!-- ===== NAV ===== -->
+<nav class="sticky top-0 z-50 backdrop-blur-md bg-rm-navy/90 text-white border-b border-rm-gold/30 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <span class="font-serif font-bold tracking-tight text-lg">RISKMATHICS <span class="text-rm-gold">|</span> TREASURY 2026</span>
+      <div class="hidden md:flex items-center space-x-7 text-sm font-medium">
+        <a href="#abstract" class="hover:text-rm-gold2 transition">Abstract</a>
+        <a href="#objetivo" class="hover:text-rm-gold2 transition">Objetivo</a>
+        <a href="#contexto" class="hover:text-rm-gold2 transition">Por qué ahora</a>
+        <a href="#curriculum" class="hover:text-rm-gold2 transition">Curriculum</a>
+        <a href="#faculty" class="hover:text-rm-gold2 transition">Faculty</a>
+      </div>
+      <a href="#rm-enroll" class="text-sm font-bold bg-gradient-to-br from-rm-gold2 to-rm-gold text-[#241803] px-5 py-2 rounded-full hover:-translate-y-px transition shadow-md">Inscribirme</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="relative overflow-hidden text-white border-b-4 border-rm-gold" style="background:linear-gradient(155deg,#12305c 0%,#0a1f3c 45%,#070f1d 100%);">
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_top_right,_#e3c578,_transparent_55%)]"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 relative z-10">
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="text-xs font-bold tracking-[0.22em] uppercase text-rm-gold2">Executive Training Program 2026</span>
+      <span class="text-[11px] font-bold uppercase tracking-widest bg-white/10 border border-white/20 rounded-full px-3 py-1">Virtual Live</span>
+      <span class="text-[11px] font-bold uppercase tracking-widest bg-rm-gold/15 border border-rm-gold/40 text-rm-gold2 rounded-full px-3 py-1">Certificado RiskMathics</span>
+    </div>
+    <h1 class="font-serif font-bold leading-[1.05] text-4xl md:text-6xl max-w-4xl mb-6">
+      Treasury, Finance Operations<br class="hidden md:block"> &amp; Cash Management
+    </h1>
+    <p class="text-lg md:text-xl text-slate-300 max-w-3xl font-light leading-relaxed mb-4">
+      El efectivo decide la supervivencia de cualquier organización. Domina la gestión de liquidez, el pronóstico de flujo, el riesgo financiero, el financiamiento, la inversión de excedentes y la operación bancaria end-to-end de una tesorería moderna.
+    </p>
+    <p class="text-sm text-slate-400 mb-10">Próxima edición · <b class="text-white font-semibold">Agosto 2026</b> · Sesiones 7:00 – 9:00 pm (hora Ciudad de México)</p>
+    <div class="flex flex-wrap gap-4 mb-12">
+      <a href="#rm-enroll" class="inline-flex items-center justify-center font-bold text-[#241803] bg-gradient-to-br from-rm-gold2 to-rm-gold px-8 py-4 rounded-full shadow-[0_8px_30px_rgba(200,160,74,.35)] hover:-translate-y-0.5 hover:shadow-[0_12px_38px_rgba(200,160,74,.45)] transition">Quiero el temario</a>
+      <a href="#rm-enroll" class="inline-flex items-center justify-center font-semibold text-white bg-white/10 border border-white/25 px-8 py-4 rounded-full hover:bg-white/15 transition">Inscribirme ahora</a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/15 pt-8">
+      <div><p class="text-3xl font-bold text-rm-gold2 font-serif">8</p><p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Sesiones en vivo</p></div>
+      <div><p class="text-3xl font-bold text-rm-gold2 font-serif">16</p><p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Horas de programa</p></div>
+      <div><p class="text-3xl font-bold text-rm-gold2 font-serif">10</p><p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Módulos del temario</p></div>
+      <div><p class="text-3xl font-bold text-rm-gold2 font-serif">100%</p><p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Practitioners activos</p></div>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+  <!-- ===== EXECUTIVE SUMMARY ===== -->
+  <section id="abstract" class="mb-20 reveal">
+    <h2 class="text-sm font-bold text-rm-navy2 uppercase tracking-widest mb-2">Executive Summary</h2>
+    <h3 class="text-3xl font-serif text-rm-ink font-bold mb-6 border-l-4 border-rm-gold pl-4">La tesorería dejó de ser back office: hoy es el centro de control financiero</h3>
+    <div class="bg-white p-8 rounded-xl shadow-sm border border-rm-line text-gray-700 space-y-5 leading-relaxed">
+      <p>La administración de las áreas de tesorería de un corporativo, dependencia de gobierno, PyME o institución financiera conlleva procesos que involucran la recolección y el manejo de los flujos de efectivo de las actividades operativas, de inversión y de financiamiento de la entidad en el día a día. En el ámbito empresarial, es un aspecto clave de la estabilidad financiera de una organización: los <b>CFOs, gerentes de negocio y tesoreros</b> son los principales responsables de las estrategias de gestión de efectivo y del análisis de estabilidad.</p>
+      <p>El efectivo es el principal activo con el que individuos y empresas saldan sus obligaciones de deuda a corto y largo plazo, gastos operativos, impuestos y nóminas. El equipo que dirige la tesorería es —o debiera ser— el responsable de todas las estrategias de <b>Cash Management</b>: desde el estado de flujo de efectivo, que registra de manera integral todos los flujos entrantes y salientes, hasta la <b>gestión de liquidez</b>, que evalúa si se pueden cumplir las obligaciones analizando los flujos con un enfoque fuerte en el capital de trabajo.</p>
+      <p class="bg-rm-soft p-4 border-l-4 border-rm-gold italic text-sm text-rm-ink">Las causas más comunes de problemas de efectivo en una organización: pobre entendimiento del ciclo de flujo de efectivo, confundir beneficio con efectivo, falta de habilidades de gestión de caja y malas inversiones de capital. Este programa existe para eliminarlas.</p>
+      <p>La administración de una tesorería abarca una amplia gama de actividades: Cash Management, inversiones, financiamiento del comercio, administración de riesgos y administración del capital de trabajo. Y uno de los principales trabajos del tesorero es <b>analizar y minimizar el riesgo financiero continuamente</b> —FX, tasas, contraparte, liquidación— para evitar cualquier problema de liquidez.</p>
+    </div>
+  </section>
+
+  <!-- ===== OBJETIVO ===== -->
+  <section id="objetivo" class="mb-20 reveal">
+    <div class="bg-rm-navy text-white rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden border border-rm-gold/30">
+      <div class="absolute top-0 right-0 -mt-4 -mr-2 text-rm-gold opacity-10 text-9xl font-serif select-none">"</div>
+      <h2 class="text-sm font-bold text-rm-gold2 uppercase tracking-widest mb-4">Objetivo del programa</h2>
+      <p class="text-2xl md:text-3xl font-serif leading-relaxed mb-6">
+        Que el participante domine el proceso completo de <span class="text-rm-gold2">manejar los recursos financieros de una organización</span> para alcanzar sus objetivos estratégicos y operativos.
+      </p>
+      <p class="text-slate-300 font-light text-lg leading-relaxed">
+        Del pronóstico de flujo de efectivo —con análisis de variaciones y planificación de escenarios— a la gestión del riesgo de FX y tasas, el financiamiento de la empresa, la inversión de excedentes bajo el trinomio seguridad-liquidez-rendimiento, la operación de pagos y banca electrónica, y la protección de la tesorería frente al fraude y las ciberamenazas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== POR QUÉ AHORA + CHART ===== -->
+  <section id="contexto" class="mb-20 reveal">
+    <h2 class="text-sm font-bold text-rm-navy2 uppercase tracking-widest mb-2">Por qué ahora</h2>
+    <h3 class="text-3xl font-serif text-rm-ink font-bold mb-6 border-l-4 border-rm-gold pl-4">El costo del dinero convirtió la liquidez en la variable estratégica</h3>
+    <p class="text-gray-600 mb-6 max-w-4xl">Tras el ciclo de alzas más agresivo en dos décadas, las tasas de referencia en México siguen muy por encima de los niveles pre-2020. Cada peso ocioso, cada línea mal negociada y cada pronóstico fallido tiene hoy un costo financiero directo y medible. Las organizaciones que profesionalizan su tesorería capturan ese valor; las que no, lo pagan.</p>
+    <div class="chart-container">
+      <canvas id="rmRateChart"></canvas>
+    </div>
+    <p class="text-xs text-gray-400 text-center mt-3">Tasa objetivo de Banco de México, cierre aproximado por año. Elaboración propia con datos públicos — cifras ilustrativas / estimación para fines de contexto.</p>
+  </section>
+
+  <!-- ===== BENEFICIOS / MATRIZ DE IMPACTO ===== -->
+  <section class="mb-20 reveal">
+    <h2 class="text-sm font-bold text-rm-navy2 uppercase tracking-widest mb-2">Matriz de impacto</h2>
+    <h3 class="text-3xl font-serif text-rm-ink font-bold mb-6 border-l-4 border-rm-gold pl-4">Lo que una tesorería bien estructurada le devuelve a tu organización</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white border border-rm-line p-7 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rm-gold2/30 to-rm-gold/20 flex items-center justify-center text-rm-navy font-serif font-bold text-lg mb-4">01</div>
+        <h4 class="font-bold text-rm-ink text-lg mb-2">Mejora del flujo de efectivo</h4>
+        <p class="text-sm text-gray-600 leading-relaxed">Asegura que los fondos se utilicen de manera eficiente y que las obligaciones de corto plazo se cumplan siempre — sin sorpresas de caja.</p>
+      </div>
+      <div class="bg-white border border-rm-line p-7 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rm-gold2/30 to-rm-gold/20 flex items-center justify-center text-rm-navy font-serif font-bold text-lg mb-4">02</div>
+        <h4 class="font-bold text-rm-ink text-lg mb-2">Reducción de riesgo financiero</h4>
+        <p class="text-sm text-gray-600 leading-relaxed">Identifica y mitiga la exposición a tipo de cambio, tasas de interés, contraparte, compensación y liquidación antes de que se convierta en pérdida.</p>
+      </div>
+      <div class="bg-white border border-rm-line p-7 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rm-gold2/30 to-rm-gold/20 flex items-center justify-center text-rm-navy font-serif font-bold text-lg mb-4">03</div>
+        <h4 class="font-bold text-rm-ink text-lg mb-2">Mejor toma de decisiones</h4>
+        <p class="text-sm text-gray-600 leading-relaxed">Información precisa y actualizada sobre los recursos financieros para que los tomadores de decisiones asignen capital con evidencia, no con intuición.</p>
+      </div>
+      <div class="bg-white border border-rm-line p-7 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rm-gold2/30 to-rm-gold/20 flex items-center justify-center text-rm-navy font-serif font-bold text-lg mb-4">04</div>
+        <h4 class="font-bold text-rm-ink text-lg mb-2">Eficiencia y ahorro de costos</h4>
+        <p class="text-sm text-gray-600 leading-relaxed">Automatiza procesos manuales propensos a error: la gestión de tesorería bien ejecutada aumenta significativamente la eficiencia operativa y reduce costos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== A QUIÉN VA DIRIGIDO ===== -->
+  <section class="mb-20 reveal">
+    <h2 class="text-sm font-bold text-rm-navy2 uppercase tracking-widest mb-2">Target Audience</h2>
+    <h3 class="text-3xl font-serif text-rm-ink font-bold mb-6 border-l-4 border-rm-gold pl-4">¿Para quién está diseñado?</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white border border-rm-line p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <h4 class="font-bold text-rm-ink text-lg mb-2">Tesorerías y Finanzas</h4>
+        <p class="text-sm text-gray-600 leading-relaxed">Tesoreros, CFOs, gerentes de finanzas y equipos de tesorería de empresas e instituciones de cualquier tamaño y giro — públicas o privadas.</p>
+      </div>
+      <div class="bg-white border border-rm-line p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <h4 class="font-bold text-rm-ink text-lg mb-2">Contabilidad y Control</h4>
+        <p class="text-sm text-gray-600 leading-relaxed">Profesionales de contabilidad, cuentas por pagar, nóminas, impuestos y auditoría interna que conectan con la operación diaria de la tesorería.</p>
+      </div>
+      <div class="bg-white border border-rm-line p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <h4 class="font-bold text-rm-ink text-lg mb-2">Gobierno, PyMEs e IF</h4>
+        <p class="text-sm text-gray-600 leading-relaxed">Dependencias de gobierno, PyMEs e instituciones financieras que buscan estructurar o profesionalizar su función de tesorería y cash management.</p>
+      </div>
+    </div>
+    <div class="mt-6 bg-rm-soft border border-rm-line rounded-xl p-6 text-sm text-gray-700">
+      <b class="text-rm-ink">Requisitos recomendados:</b> bases básicas o superiores de aritmética y matemáticas financieras, y trabajar en áreas de Contabilidad, Finanzas o Tesorerías de empresas y/o instituciones — sin importar el tamaño o el giro, públicas o privadas.
+    </div>
+  </section>
+
+  <!-- ===== CURRICULUM ===== -->
+  <section id="curriculum" class="mb-20 reveal">
+    <h2 class="text-sm font-bold text-rm-navy2 uppercase tracking-widest mb-2">Curriculum Architecture</h2>
+    <h3 class="text-3xl font-serif text-rm-ink font-bold mb-4 border-l-4 border-rm-gold pl-4">Temario completo — 10 módulos</h3>
+    <p class="text-gray-600 mb-8 max-w-4xl">8 sesiones en vivo de 2 horas (7:00 – 9:00 pm, hora Ciudad de México). Un recorrido progresivo: de la arquitectura de la tesorería y el efectivo, a los mercados, los sistemas bancarios y la defensa contra el fraude.</p>
+
+    <div class="border-t border-rm-line bg-white rounded-b-xl">
+
+      <details class="rm-acc" open>
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">1 · Tesorería y administración de efectivo</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>El papel de la tesorería en una organización</li>
+            <li>Principales áreas de conexión: Planeación Financiera, Contabilidad, Cuentas por Pagar, Nóminas, Impuestos, Auditoría Interna</li>
+            <li>¿Qué es la gestión de efectivo y cómo se vincula con otras funciones de tesorería?</li>
+            <li>Los beneficios de una buena gestión de efectivo</li>
+            <li>Niveles de responsabilidad de la tesorería</li>
+            <li>Enfoques descentralizados vs. distribuidos vs. centralizados</li>
+            <li>Banca interna — las funciones principales</li>
+            <li>Medición del desempeño de la tesorería</li>
+            <li>¿Por qué las tesorerías difieren entre empresas u organizaciones?</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">2 · Previsión de flujo de efectivo</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Objetivos de la previsión de flujos de efectivo</li>
+            <li>Pronósticos a corto y largo plazo: modelos y métodos</li>
+            <li>Riesgo de liquidez — posibles efectos</li>
+            <li>Costo de la liquidez</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">3 · Introducción a la Administración de Riesgos</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Definición de riesgos financieros</li>
+            <li>Objetivos de la gestión del riesgo</li>
+            <li>Riesgo de contraparte y riesgo de crédito</li>
+            <li>Riesgo de mercado: FX (tipo de cambio) y tasa de interés</li>
+            <li>Riesgos de compensación y liquidación</li>
+            <li>Mitigación del riesgo</li>
+            <li>Cobertura "natural"</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">4 · Financiamiento de la empresa</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Deuda a corto y largo plazo</li>
+            <li>Desafíos de las facilidades de financiación</li>
+            <li>Uso de los mercados de deuda</li>
+            <li>Políticas y procedimientos de financiamiento apropiados</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">5 · Inversión de excedentes</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Elección de instrumentos y clases de activos: ¿cómo escoger la mejor inversión para nuestro Cash Management?</li>
+            <li>Seguridad vs. Liquidez vs. Rendimiento</li>
+            <li>Políticas y procedimientos de inversión apropiados</li>
+            <li>¿Qué es un Fondo de Inversión y cómo medimos su desempeño?</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">6 · Mercado de Dinero</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Tasas de interés</li>
+            <li>Tasas de fondeo</li>
+            <li>Estructura del mercado de dinero</li>
+            <li>Participantes</li>
+            <li>Valores negociados</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">7 · Mercado de Capitales</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Estructura</li>
+            <li>Participantes</li>
+            <li>¿Qué se puede comprar y vender en el mercado de capitales?</li>
+            <li>¿Qué es un índice?</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">8 · Sistemas bancarios</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Banca electrónica: portales bancarios y soluciones de cash management</li>
+            <li>Desafíos de seguridad y control</li>
+            <li>Agregación bancaria</li>
+            <li>Sistemas de pagos masivos</li>
+            <li>Vinculación de la banca electrónica al sistema de gestión de tesorería corporativa (ERP): lograr el procesamiento directo</li>
+            <li>El papel de SWIFT</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">9 · Cuentas en moneda local y extranjera</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Dónde mantenerlas y gestionarlas</li>
+            <li>Implicaciones para los costos bancarios</li>
+            <li>Desafíos prácticos de dónde mantener cuentas en diferentes monedas</li>
+            <li>Coberturas cambiarias y su impacto en la liquidez de la empresa</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rm-acc">
+        <summary><div class="flex-1"><h4 class="font-bold text-rm-ink text-base md:text-lg">10 · CyberSecurity &amp; Fraud Risk Management</h4></div><span class="plus">+</span></summary>
+        <div class="px-5 pb-6 bg-rm-soft/60">
+          <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1.5 pt-3">
+            <li>Definiciones y alcance</li>
+            <li>¿Qué es lo que más estamos viendo hoy?</li>
+            <li>Nuestro panorama de seguridad</li>
+            <li>Vectores de ataque y algunos hallazgos preocupantes</li>
+            <li>¿En dónde deberíamos enfocarnos?</li>
+            <li>¿Qué podemos hacer?</li>
+            <li>Políticas de tesorería para proteger tu tesorería</li>
+            <li>Amenazas internas</li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ===== FACULTY ===== -->
+  <section id="faculty" class="mb-20 reveal">
+    <h2 class="text-sm font-bold text-rm-navy2 uppercase tracking-widest mb-2">Faculty</h2>
+    <h3 class="text-3xl font-serif text-rm-ink font-bold mb-6 border-l-4 border-rm-gold pl-4">Aprende de quien dirigió tesorerías reales</h3>
+    <div class="bg-white border border-rm-line rounded-2xl p-8 md:p-10 shadow-sm">
+      <div class="flex flex-col md:flex-row md:items-start gap-6">
+        <div class="flex-none w-16 h-16 rounded-2xl bg-rm-navy text-rm-gold2 font-serif font-bold text-2xl flex items-center justify-center">AC</div>
+        <div>
+          <h4 class="font-serif font-bold text-2xl text-rm-ink">Antonio Castaño</h4>
+          <p class="text-sm font-semibold text-rm-navy2 mt-1 mb-4">Asesor Independiente · Miembro del Consejo de OFINSA · Ex Director de Tesorería, CIBanco</p>
+          <p class="text-sm text-gray-700 leading-relaxed mb-3">Amplia experiencia en mercados financieros y banca de inversión en México y el extranjero. En <b>BBVA México</b> fue responsable de FX y de Credit Markets; previamente fue <b>Director General Adjunto Financiero de Nacional Financiera</b>, supervisando todas las actividades de inversión y financiamiento. Ha ocupado diversos cargos en <b>UBS, la Secretaría de Hacienda y Crédito Público, Valores Finamex y Operadora de Bolsa</b>, y ha sido consejero de Operadora de Fondos Nafinsa, MacMa, Médica Sur y el Fondo México, entre otros.</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Licenciado en Actuaría con mención honorífica por el <b>ITAM</b> y <b>MBA por la Universidad de Stanford</b>. Ha impartido cátedra en el ITAM, la Universidad Anáhuac y la UNAM.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== URGENCIA ===== -->
+  <section class="mb-16 reveal">
+    <div class="rounded-2xl border border-rm-gold/40 bg-gradient-to-r from-rm-navy via-rm-navy2 to-rm-navy text-white p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-rm-gold2 mb-2">Cupo limitado · Grupos reducidos</p>
+        <h4 class="font-serif font-bold text-2xl md:text-3xl">Próxima edición: Agosto 2026 — Virtual Live</h4>
+        <p class="text-slate-300 text-sm mt-2">8 sesiones · 7:00 a 9:00 pm (CDMX) · Constancia RiskMathics Financial Institute · Factura CFDI</p>
+      </div>
+      <a href="#rm-enroll" class="flex-none inline-flex items-center justify-center font-bold text-[#241803] bg-gradient-to-br from-rm-gold2 to-rm-gold px-8 py-4 rounded-full shadow-lg hover:-translate-y-0.5 transition">Asegurar mi lugar</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== RISKMATHICS SALES MACHINE (inyectable) ===== -->
+<section id="rm-enroll" style="background:linear-gradient(135deg,#12305c,#0a1f3c);color:#fff;padding:64px 20px;font-family:'Inter',Arial,sans-serif;">
+  <div style="max-width:660px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="color:#c8a04a;letter-spacing:3px;font-size:12px;font-weight:700;">INSCRIPCIÓN · CUPO LIMITADO</div>
+      <h2 style="font-size:34px;margin:12px 0 8px;font-weight:800;line-height:1.15;font-family:'Fraunces',Georgia,serif;">Asegura tu lugar</h2>
+      <p style="color:#c2cee0;font-size:16px;margin:0;">Déjanos tus datos, verifica tu WhatsApp y recibe el temario completo. Sin compromiso.</p>
+    </div>
+    <div style="background:#fff;color:#1f2937;border-radius:18px;padding:32px;box-shadow:0 30px 70px rgba(0,0,0,.3);">
+      <form id="rm-lead" onsubmit="return rmSubmit(event)" style="display:grid;gap:12px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <input name="nombre" placeholder="Nombre" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+          <input name="apellido" placeholder="Apellido" style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+        </div>
+        <input type="email" name="email" placeholder="Email corporativo" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <input name="puesto" placeholder="Puesto" style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+          <input name="empresa" placeholder="Institución / Empresa" style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+        </div>
+        <input name="whatsapp" placeholder="WhatsApp (ej. +52...)" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+        <button type="submit" style="background:linear-gradient(135deg,#e3c578,#c8a04a);color:#241803;font-weight:800;font-size:16px;border:none;padding:15px;border-radius:10px;cursor:pointer;">Quiero el temario</button>
+        <p style="font-size:12px;color:#8a94a6;margin:0;text-align:center;">🔒 Te enviamos un código por SMS para verificar. Datos protegidos.</p>
+      </form>
+      <div id="rm-verify" style="display:none;"></div>
+      <div id="rm-thanks" style="display:none;background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;padding:20px;border-radius:14px;font-size:15px;">✅ <b>¡Listo!</b> Recibimos y verificamos tus datos. Te enviamos el temario y un asesor te contactará.</div>
+      <div style="margin-top:24px;padding-top:22px;border-top:1px solid #eef1f6;text-align:center;">
+        <div style="font-size:13px;color:#6b7280;letter-spacing:1px;">O INSCRÍBETE Y PAGA DIRECTO</div>
+        <div style="font-size:30px;font-weight:800;color:#0a1f3c;margin:8px 0 4px;">MXN $<span>65,000</span> <span style="font-size:14px;color:#6b7280;font-weight:500;">+ IVA</span></div>
+        <div style="display:grid;gap:10px;margin-top:16px;">
+          <a id="rm-paypal" href="https://www.paypal.com/ncp/payment/2DMC99VTQLGMJ" target="_blank" rel="noopener" style="background:#c8a04a;color:#241803;font-weight:800;padding:14px;border-radius:10px;text-decoration:none;">Pagar con PayPal · 6 MSI</a>
+          <a id="rm-stripe" href="https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f" target="_blank" rel="noopener" style="background:#0a1f3c;color:#fff;font-weight:700;padding:14px;border-radius:10px;text-decoration:none;">Pagar con tarjeta · Stripe</a>
+        </div>
+        <p style="font-size:11px;color:#9aa4b4;margin-top:12px;">100% seguro · SSL · PayPal Verified · RiskMathics Financial Institute</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+const RM_CFG={id:"treasury",folleto:"https://riskmathics-folletos-2026.s3.amazonaws.com/treasury-2026.pdf",paypal:"https://www.paypal.com/ncp/payment/2DMC99VTQLGMJ",stripe:"https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f"};
+const RM_VURL="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/verify-lead";
+const RM_VKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U";
+let RM_LEAD=null;
+(function(){var pp=document.getElementById('rm-paypal');if(pp&&!RM_CFG.paypal)pp.style.display='none';var sp=document.getElementById('rm-stripe');if(sp&&!RM_CFG.stripe)sp.style.display='none';})();
+async function rmPost(p){const r=await fetch(RM_VURL,{method:"POST",headers:{"Content-Type":"application/json","apikey":RM_VKEY,"Authorization":"Bearer "+RM_VKEY},body:JSON.stringify(p)});return r.json();}
+async function rmSubmit(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));let phone=(d.whatsapp||"").trim().replace(/[\s\-()]/g,"");if(phone&&!phone.startsWith("+"))phone="+52"+phone.replace(/^0+/,"");if(!phone||phone.length<10){alert("Escribe tu WhatsApp con lada (ej +52...).");return false;}d.phone=phone;d.curso=RM_CFG.id;d.folleto=RM_CFG.folleto;RM_LEAD=d;const b=f.querySelector('button[type=submit]');b.textContent="Enviando código...";b.disabled=true;let res;try{res=await rmPost({action:"start",phone:phone,channel:"sms"});}catch(_){res={};}if(res&&(res.status==="pending"||res.ok)){f.style.display="none";rmShowCode(phone);}else{b.textContent="Quiero el temario";b.disabled=false;alert("No pudimos enviar el código. Revisa tu número.");}return false;}
+function rmShowCode(phone){var c=document.getElementById('rm-verify');c.innerHTML='<p style="margin:0 0 12px;font-size:15px;color:#1f2937;">📲 Te enviamos un código por SMS a <b>'+phone+'</b>. Ingrésalo:</p><input id="rm-otp" inputmode="numeric" placeholder="Código de 6 dígitos" style="width:100%;padding:14px;border:1px solid #d8dee9;border-radius:10px;font-size:22px;text-align:center;letter-spacing:8px;margin-bottom:12px;"><button type="button" onclick="rmVerify()" style="width:100%;background:linear-gradient(135deg,#e3c578,#c8a04a);color:#241803;font-weight:800;font-size:16px;border:none;padding:14px;border-radius:10px;cursor:pointer;">Verificar y recibir temario</button><p id="rm-vmsg" style="font-size:12px;color:#8a94a6;margin-top:8px;"></p>';c.style.display="block";document.getElementById('rm-otp').focus();}
+async function rmVerify(){var code=(document.getElementById('rm-otp').value||"").trim();var m=document.getElementById('rm-vmsg');if(code.length<4){m.textContent="Escribe el código completo.";return;}m.textContent="Verificando...";var res;try{res=await rmPost({action:"check",phone:RM_LEAD.phone,code:code,email:RM_LEAD.email,nombre:RM_LEAD.nombre,apellido:RM_LEAD.apellido,puesto:RM_LEAD.puesto,empresa:RM_LEAD.empresa,curso:RM_CFG.id,folleto:RM_CFG.folleto});}catch(_){res={};}if(res&&res.verified){document.getElementById('rm-verify').style.display="none";document.getElementById('rm-thanks').style.display="block";if(RM_CFG.folleto)window.open(RM_CFG.folleto,'_blank');}else{m.textContent="Código incorrecto o expirado. Intenta de nuevo.";}}
+</script>
+<!-- ===== /SALES MACHINE ===== -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-rm-navy text-slate-400 py-12 border-t border-rm-gold/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="font-serif text-white text-xl mb-2">RiskMathics Financial Institute</p>
+    <p class="text-xs uppercase tracking-[0.25em] text-rm-gold2 mb-6">Learn · Apply · Profit</p>
+    <p class="text-sm mb-1">Treasury, Finance Operations &amp; Cash Management · Virtual Live · Ciudad de México</p>
+    <p class="text-xs text-slate-500 mt-4"><a href="https://www.riskmathics.com" class="hover:text-white transition">www.riskmathics.com</a> · derivatives@riskmathics.com · +52 (55) 5536 3597</p>
+  </div>
+</footer>
+
+<script>
+// Chart de contexto: tasa objetivo Banxico (ilustrativa)
+document.addEventListener('DOMContentLoaded', function(){
+  const ctx = document.getElementById('rmRateChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2019','2020','2021','2022','2023','2024','2025','2026e'],
+      datasets: [{
+        label: 'Tasa objetivo Banxico (%, cierre de año — ilustrativo)',
+        data: [7.25, 4.25, 5.50, 10.50, 11.25, 10.00, 8.50, 7.75],
+        borderColor: '#0a1f3c',
+        backgroundColor: 'rgba(10,31,60,0.08)',
+        borderWidth: 3,
+        pointBackgroundColor: '#c8a04a',
+        pointBorderColor: '#fff',
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        fill: true,
+        tension: 0.35
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, position: 'top', labels: { font: { family: 'Inter', size: 12 } } },
+        tooltip: {
+          backgroundColor: '#0a1f3c',
+          titleFont: { family: 'Inter', size: 13 },
+          bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+          padding: 10,
+          callbacks: { label: function(c){ return c.parsed.y + ' %'; } }
+        }
+      },
+      scales: {
+        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Inter' }, callback: function(v){ return v + ' %'; } } },
+        x: { grid: { display: false }, ticks: { font: { family: 'Inter' } } }
+      }
+    }
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+});
+</script>
+</body>
+</html>
