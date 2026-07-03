@@ -13,10 +13,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- Google Fonts: Fraunces (serif display) + Inter (sans) -->
+<!-- Google Fonts: Poppins (display/headers) + Lora (body) — tipografia de marca RiskMathics -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <script>
 tailwind.config = {
@@ -35,8 +35,10 @@ tailwind.config = {
         }
       },
       fontFamily: {
-        sans:  ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Fraunces', 'Georgia', 'serif']
+        sans:    ['Lora', 'Georgia', 'serif'],
+        serif:   ['Poppins', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+        body:    ['Lora', 'Georgia', 'serif']
       }
     }
   }
@@ -45,6 +47,8 @@ tailwind.config = {
 
 <style>
   html{scroll-behavior:smooth}
+  body{font-family:'Lora',Georgia,serif}
+  h1,h2,h3,h4,h5,h6,nav,button,.font-serif,a[href="#rm-enroll"]{font-family:'Poppins',sans-serif}
   body{background:#ffffff;color:#0a1424;-webkit-font-smoothing:antialiased}
   .chart-container{position:relative;width:100%;max-width:960px;margin:0 auto;height:44vh;max-height:460px;min-height:280px;background:#fff;border:1px solid #e8ebf0;border-radius:.9rem;padding:1.1rem;box-shadow:0 10px 34px rgba(10,31,60,.07)}
   @media (max-width:768px){.chart-container{height:36vh}}
@@ -374,11 +378,11 @@ tailwind.config = {
 </main>
 
 <!-- ===== RISKMATHICS SALES MACHINE (inyectable) ===== -->
-<section id="rm-enroll" style="background:linear-gradient(135deg,#12305c,#0a1f3c);color:#fff;padding:64px 20px;font-family:'Inter',Arial,sans-serif;">
+<section id="rm-enroll" style="background:linear-gradient(135deg,#12305c,#0a1f3c);color:#fff;padding:64px 20px;font-family:'Lora',Georgia,serif;">
   <div style="max-width:660px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:28px;">
       <div style="color:#c8a04a;letter-spacing:3px;font-size:12px;font-weight:700;">INSCRIPCIÓN · CUPO LIMITADO</div>
-      <h2 style="font-size:34px;margin:12px 0 8px;font-weight:800;line-height:1.15;font-family:'Fraunces',Georgia,serif;">Asegura tu lugar</h2>
+      <h2 style="font-size:34px;margin:12px 0 8px;font-weight:800;line-height:1.15;font-family:'Poppins',sans-serif;">Asegura tu lugar</h2>
       <p style="color:#c2cee0;font-size:16px;margin:0;">Déjanos tus datos, verifica tu WhatsApp y recibe el temario completo. Sin compromiso.</p>
     </div>
     <div style="background:#fff;color:#1f2937;border-radius:18px;padding:32px;box-shadow:0 30px 70px rgba(0,0,0,.3);">
@@ -459,18 +463,18 @@ document.addEventListener('DOMContentLoaded', function(){
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: { display: true, position: 'top', labels: { font: { family: 'Inter', size: 12 } } },
+        legend: { display: true, position: 'top', labels: { font: { family: 'Lora', size: 12 } } },
         tooltip: {
           backgroundColor: '#0a1f3c',
-          titleFont: { family: 'Inter', size: 13 },
-          bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+          titleFont: { family: 'Poppins', size: 13 },
+          bodyFont: { family: 'Lora', size: 14, weight: 'bold' },
           padding: 10,
           callbacks: { label: function(c){ return c.parsed.y + ' %'; } }
         }
       },
       scales: {
-        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Inter' }, callback: function(v){ return v + ' %'; } } },
-        x: { grid: { display: false }, ticks: { font: { family: 'Inter' } } }
+        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Lora' }, callback: function(v){ return v + ' %'; } } },
+        x: { grid: { display: false }, ticks: { font: { family: 'Lora' } } }
       }
     }
   });
