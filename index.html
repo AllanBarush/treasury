@@ -381,7 +381,7 @@ tailwind.config = {
 
 </main>
 
-<!-- ===== RISKMATHICS SALES MACHINE (inyectable) ===== -->
+<!-- ===== RISKMATHICS SALES MACHINE v2 (inyectable) ===== -->
 <section id="rm-enroll" style="background:linear-gradient(135deg,#12305c,#0a1f3c);color:#fff;padding:64px 20px;font-family:'Lora',Georgia,serif;">
   <div style="max-width:660px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:28px;">
@@ -392,17 +392,33 @@ tailwind.config = {
     </div>
     <div style="background:#fff;color:#1f2937;border-radius:18px;padding:32px;box-shadow:0 30px 70px rgba(0,0,0,.3);">
       <form id="rm-lead" onsubmit="return rmSubmit(event)" style="display:grid;gap:12px;">
+        <input name="nombre" placeholder="Nombre(s)" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;font-family:'Lora',Georgia,serif;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <input name="nombre" placeholder="Nombre" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
-          <input name="apellido" placeholder="Apellido" style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+          <input name="apellido_paterno" placeholder="Apellido paterno" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;font-family:'Lora',Georgia,serif;">
+          <input name="apellido_materno" placeholder="Apellido materno" style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;font-family:'Lora',Georgia,serif;">
         </div>
-        <input type="email" name="email" placeholder="Email corporativo" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+        <input type="email" name="email" placeholder="Email corporativo" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;font-family:'Lora',Georgia,serif;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <input name="puesto" placeholder="Puesto" style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
-          <input name="empresa" placeholder="Institución / Empresa" style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
+          <input name="puesto" placeholder="Puesto" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;font-family:'Lora',Georgia,serif;">
+          <input name="empresa" placeholder="Institución / Empresa" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;font-family:'Lora',Georgia,serif;">
         </div>
-        <input name="whatsapp" placeholder="WhatsApp (ej. +52...)" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;">
-        <button type="submit" style="background:linear-gradient(135deg,#e3c578,#c8a04a);color:#241803;font-weight:800;font-size:16px;border:none;padding:15px;border-radius:10px;cursor:pointer;">Quiero el temario</button>
+        <select name="sector" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;font-family:'Lora',Georgia,serif;color:#1f2937;background:#fff;">
+          <option value="" disabled selected>Sector financiero / industria</option>
+          <option>AFORE / Fondos de Pensión</option>
+          <option>Aseguradora / Insurance</option>
+          <option>Banca</option>
+          <option>Casa de Bolsa / Broker Dealer</option>
+          <option>Asset Manager</option>
+          <option>Hedge Fund</option>
+          <option>Family Office</option>
+          <option>Corporativo</option>
+          <option>PyME</option>
+          <option>Gobierno</option>
+          <option>Energía</option>
+          <option>Otro</option>
+        </select>
+        <input name="whatsapp" placeholder="WhatsApp (ej. +52...)" required style="padding:13px 14px;border:1px solid #d8dee9;border-radius:10px;font-size:15px;font-family:'Lora',Georgia,serif;">
+        <button type="submit" style="background:linear-gradient(135deg,#e3c578,#c8a04a);color:#241803;font-weight:800;font-size:16px;border:none;padding:15px;border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;">Quiero el temario</button>
         <p style="font-size:12px;color:#8a94a6;margin:0;text-align:center;">🔒 Te enviamos un código por SMS para verificar. Datos protegidos.</p>
       </form>
       <div id="rm-verify" style="display:none;"></div>
@@ -426,11 +442,11 @@ const RM_VKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJl
 let RM_LEAD=null;
 (function(){var pp=document.getElementById('rm-paypal');if(pp&&!RM_CFG.paypal)pp.style.display='none';var sp=document.getElementById('rm-stripe');if(sp&&!RM_CFG.stripe)sp.style.display='none';})();
 async function rmPost(p){const r=await fetch(RM_VURL,{method:"POST",headers:{"Content-Type":"application/json","apikey":RM_VKEY,"Authorization":"Bearer "+RM_VKEY},body:JSON.stringify(p)});return r.json();}
-async function rmSubmit(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));let phone=(d.whatsapp||"").trim().replace(/[\s\-()]/g,"");if(phone&&!phone.startsWith("+"))phone="+52"+phone.replace(/^0+/,"");if(!phone||phone.length<10){alert("Escribe tu WhatsApp con lada (ej +52...).");return false;}d.phone=phone;d.curso=RM_CFG.id;d.folleto=RM_CFG.folleto;RM_LEAD=d;const b=f.querySelector('button[type=submit]');b.textContent="Enviando código...";b.disabled=true;let res;try{res=await rmPost({action:"start",phone:phone,channel:"sms"});}catch(_){res={};}if(res&&(res.status==="pending"||res.ok)){f.style.display="none";rmShowCode(phone);}else{b.textContent="Quiero el temario";b.disabled=false;alert("No pudimos enviar el código. Revisa tu número.");}return false;}
+async function rmSubmit(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));let phone=(d.whatsapp||"").trim().replace(/[\s\-()]/g,"");if(phone&&!phone.startsWith("+"))phone="+52"+phone.replace(/^0+/,"");if(!phone||phone.length<10){alert("Escribe tu WhatsApp con lada (ej +52...).");return false;}d.phone=phone;d.apellido=((d.apellido_paterno||"")+" "+(d.apellido_materno||"")).trim();d.curso=RM_CFG.id;d.folleto=RM_CFG.folleto;RM_LEAD=d;const b=f.querySelector('button[type=submit]');b.textContent="Enviando código...";b.disabled=true;let res;try{res=await rmPost({action:"start",phone:phone,channel:"sms"});}catch(_){res={};}if(res&&(res.status==="pending"||res.ok)){f.style.display="none";rmShowCode(phone);}else{b.textContent="Quiero el temario";b.disabled=false;alert("No pudimos enviar el código. Revisa tu número.");}return false;}
 function rmShowCode(phone){var c=document.getElementById('rm-verify');c.innerHTML='<p style="margin:0 0 12px;font-size:15px;color:#1f2937;">📲 Te enviamos un código por SMS a <b>'+phone+'</b>. Ingrésalo:</p><input id="rm-otp" inputmode="numeric" placeholder="Código de 6 dígitos" style="width:100%;padding:14px;border:1px solid #d8dee9;border-radius:10px;font-size:22px;text-align:center;letter-spacing:8px;margin-bottom:12px;"><button type="button" onclick="rmVerify()" style="width:100%;background:linear-gradient(135deg,#e3c578,#c8a04a);color:#241803;font-weight:800;font-size:16px;border:none;padding:14px;border-radius:10px;cursor:pointer;">Verificar y recibir temario</button><p id="rm-vmsg" style="font-size:12px;color:#8a94a6;margin-top:8px;"></p>';c.style.display="block";document.getElementById('rm-otp').focus();}
-async function rmVerify(){var code=(document.getElementById('rm-otp').value||"").trim();var m=document.getElementById('rm-vmsg');if(code.length<4){m.textContent="Escribe el código completo.";return;}m.textContent="Verificando...";var res;try{res=await rmPost({action:"check",phone:RM_LEAD.phone,code:code,email:RM_LEAD.email,nombre:RM_LEAD.nombre,apellido:RM_LEAD.apellido,puesto:RM_LEAD.puesto,empresa:RM_LEAD.empresa,curso:RM_CFG.id,folleto:RM_CFG.folleto});}catch(_){res={};}if(res&&res.verified){document.getElementById('rm-verify').style.display="none";document.getElementById('rm-thanks').style.display="block";if(RM_CFG.folleto)window.open(RM_CFG.folleto,'_blank');}else{m.textContent="Código incorrecto o expirado. Intenta de nuevo.";}}
+async function rmVerify(){var code=(document.getElementById('rm-otp').value||"").trim();var m=document.getElementById('rm-vmsg');if(code.length<4){m.textContent="Escribe el código completo.";return;}m.textContent="Verificando...";var res;try{res=await rmPost({action:"check",phone:RM_LEAD.phone,code:code,email:RM_LEAD.email,nombre:RM_LEAD.nombre,apellido:RM_LEAD.apellido,apellido_paterno:RM_LEAD.apellido_paterno,apellido_materno:RM_LEAD.apellido_materno,puesto:RM_LEAD.puesto,empresa:RM_LEAD.empresa,sector:RM_LEAD.sector,curso:RM_CFG.id,folleto:RM_CFG.folleto});}catch(_){res={};}if(res&&res.verified){document.getElementById('rm-verify').style.display="none";document.getElementById('rm-thanks').style.display="block";if(RM_CFG.folleto)window.open(RM_CFG.folleto,'_blank');}else{m.textContent="Código incorrecto o expirado. Intenta de nuevo.";}}
 </script>
-<!-- ===== /SALES MACHINE ===== -->
+<!-- ===== /SALES MACHINE v2 ===== -->
 
 <!-- ===== FOOTER ===== -->
 <footer class="bg-rm-navy text-slate-400 py-12 border-t border-rm-gold/30">
