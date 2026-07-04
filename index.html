@@ -472,10 +472,10 @@ tailwind.config = {
       <div id="rm-thanks" style="display:none;border:1px solid #b7e4c7;background:#f6fdf9;color:#1b4332;padding:22px;border-radius:6px;font-size:14.5px;font-family:'Lora',Georgia,serif;line-height:1.6;"><b>Listo.</b> Recibimos y verificamos tus datos. Te enviamos el temario a tu correo y un asesor te contactará.</div>
       <div style="margin-top:34px;padding-top:28px;border-top:1px solid #edf0f5;text-align:center;">
         <div style="font-size:10px;color:#93A0B4;letter-spacing:2.2px;font-family:'Poppins',Arial,sans-serif;">O INSCRÍBETE Y PAGA DIRECTO</div>
-        <div style="font-size:30px;font-weight:300;color:#0a1f3c;margin:14px 0 2px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">MXN $65,000</div>
+        <div style="font-size:30px;font-weight:300;color:#0a1f3c;margin:14px 0 2px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">MXN $75,400</div>
         <div style="font-size:11px;color:#9aa4b4;font-family:'Lora',Georgia,serif;font-style:italic;margin-bottom:18px;">IVA</div>
         <div style="display:grid;gap:10px;">
-          <a id="rm-paypal" href="https://www.paypal.com/ncp/payment/2DMC99VTQLGMJ" target="_blank" rel="noopener" style="background:#c8a04a;color:#1b1710;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:15px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con PayPal</a>
+          <a id="rm-paypal" href="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=treasury" target="_blank" rel="noopener" style="background:#c8a04a;color:#1b1710;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:15px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con PayPal</a>
           <a id="rm-stripe" href="https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f" target="_blank" rel="noopener" style="background:transparent;border:1.5px solid #0a1f3c;color:#0a1f3c;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con tarjeta · Stripe</a>
         </div>
         <p style="font-size:10px;color:#b3bcc9;margin-top:16px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">100% seguro · SSL · PayPal Verified · RiskMathics Financial Institute</p>
@@ -485,7 +485,7 @@ tailwind.config = {
 </section>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 <script>
-const RM_CFG={id:"treasury",folleto:"https://riskmathics-folletos-2026.s3.amazonaws.com/treasury-2026.pdf",paypal:"https://www.paypal.com/ncp/payment/2DMC99VTQLGMJ",stripe:"https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f"};
+const RM_CFG={id:"treasury",folleto:"https://riskmathics-folletos-2026.s3.amazonaws.com/treasury-2026.pdf",paypal:"https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=treasury",stripe:"https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f"};
 const RM_VURL="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/verify-lead";
 const RM_VKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U";
 let RM_LEAD=null;var rmIti=null;
