@@ -100,104 +100,104 @@ form.addEventListener('submit',function(e){e.preventDefault();let valid=true;doc
 <!-- ===== RISKMATHICS SALES MACHINE v3.2 (inyectable) ===== -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 <style>
-  #rm-enroll .iti{width:100%;}
-  #rm-enroll .iti__selected-flag{background:transparent;padding-left:0;}
-  #rm-enroll input,#rm-enroll select{outline:none;background:transparent;}
-  #rm-enroll .rm-in{width:100%;border:none;border-bottom:1px solid #dfe5ee;border-radius:0;padding:9px 1px 10px;font-size:15px;font-family:'Lora',Georgia,serif;color:#1b2430;transition:border-color .18s;}
-  #rm-enroll .rm-in:focus{border-bottom-color:#8f9bb0;}
-  #rm-enroll .rm-in::placeholder{color:#b7c0cd;}
-  #rm-enroll .rm-lb{display:block;font-family:'Poppins',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#93A0B4;text-transform:uppercase;margin-bottom:2px;}
-  #rm-enroll select.rm-in{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2393A0B4' stroke-width='1.4' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;padding-right:20px;}
-  @media (max-width:560px){#rm-enroll .rm-2col{grid-template-columns:1fr !important;}}
+ #rm-enroll .iti{width:100%;}
+ #rm-enroll .iti__selected-flag{background:transparent;padding-left:0;}
+ #rm-enroll input,#rm-enroll select{outline:none;background:transparent;}
+ #rm-enroll .rm-in{width:100%;border:none;border-bottom:1px solid #dfe5ee;border-radius:0;padding:9px 1px 10px;font-size:15px;font-family:'Lora',Georgia,serif;color:#1b2430;transition:border-color .18s;}
+ #rm-enroll .rm-in:focus{border-bottom-color:#8f9bb0;}
+ #rm-enroll .rm-in::placeholder{color:#b7c0cd;}
+ #rm-enroll .rm-lb{display:block;font-family:'Poppins',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#93A0B4;text-transform:uppercase;margin-bottom:2px;}
+ #rm-enroll select.rm-in{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2393A0B4' stroke-width='1.4' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;padding-right:20px;}
+ @media (max-width:560px){#rm-enroll .rm-2col{grid-template-columns:1fr !important;}}
 </style>
 <section id="rm-enroll" style="background:linear-gradient(135deg,#12305c,#0a1f3c);color:#fff;padding:88px 22px;font-family:'Poppins',Arial,sans-serif;">
-  <div style="max-width:600px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:38px;">
-      <div style="color:#c8a04a;letter-spacing:3px;font-size:10.5px;font-weight:500;">INSCRIPCIÓN · CUPO LIMITADO</div>
-      <h2 style="font-size:26px;margin:16px 0 0;font-weight:600;line-height:1.25;letter-spacing:.3px;">Asegura tu lugar</h2>
-      <div style="width:50px;height:2px;background:#c8a04a;margin:18px auto;"></div>
-      <p style="color:#c2cee0;font-size:15px;margin:0;font-family:'Lora',Georgia,serif;font-style:italic;">Déjanos tus datos, verifica tu correo y tu WhatsApp,<br>y recibe el temario completo. Sin compromiso.</p>
-    </div>
-    <div style="background:#ffffff;color:#1b2430;border-radius:6px;padding:44px 42px;border:1px solid rgba(255,255,255,.14);box-shadow:0 2px 24px rgba(0,0,0,.16);">
-      <form id="rm-lead" onsubmit="return rmSubmit(event)" style="display:grid;gap:22px;">
-        <div><label class="rm-lb">Nombre(s)</label><input class="rm-in" name="nombre" required></div>
-        <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
-          <div><label class="rm-lb">Apellido paterno</label><input class="rm-in" name="apellido_paterno" required></div>
-          <div><label class="rm-lb">Apellido materno</label><input class="rm-in" name="apellido_materno"></div>
-        </div>
-        <div><label class="rm-lb">Email corporativo</label><input class="rm-in" type="email" name="email" required></div>
-        <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
-          <div><label class="rm-lb">Puesto</label><input class="rm-in" name="puesto" required></div>
-          <div><label class="rm-lb">Institución / Empresa</label><input class="rm-in" name="empresa" required></div>
-        </div>
-        <div><label class="rm-lb">Sector financiero / industria</label>
-          <select class="rm-in" name="sector" required>
-            <option value="" disabled selected></option>
-            <option>AFORE / Fondos de Pensión</option>
-            <option>Aseguradora / Insurance</option>
-            <option>Banca</option>
-            <option>Casa de Bolsa / Broker Dealer</option>
-            <option>Asset Manager</option>
-            <option>Hedge Fund</option>
-            <option>Family Office</option>
-            <option>Corporativo</option>
-            <option>PyME</option>
-            <option>Gobierno</option>
-            <option>Energía</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
-          <div><label class="rm-lb">País</label>
-            <select class="rm-in" name="pais" required>
-              <option value="" disabled data-iso=""></option>
-              <option data-iso="mx" selected>México</option>
-              <option data-iso="us">Estados Unidos</option>
-              <option data-iso="es">España</option>
-              <option data-iso="co">Colombia</option>
-              <option data-iso="pe">Perú</option>
-              <option data-iso="cl">Chile</option>
-              <option data-iso="ar">Argentina</option>
-              <option data-iso="ec">Ecuador</option>
-              <option data-iso="gt">Guatemala</option>
-              <option data-iso="pa">Panamá</option>
-              <option data-iso="cr">Costa Rica</option>
-              <option data-iso="do">República Dominicana</option>
-              <option data-iso="bo">Bolivia</option>
-              <option data-iso="uy">Uruguay</option>
-              <option data-iso="py">Paraguay</option>
-              <option data-iso="ve">Venezuela</option>
-              <option data-iso="hn">Honduras</option>
-              <option data-iso="sv">El Salvador</option>
-              <option data-iso="ni">Nicaragua</option>
-              <option data-iso="br">Brasil</option>
-              <option data-iso="ca">Canadá</option>
-              <option data-iso="">Otro</option>
-            </select>
-          </div>
-          <div><label class="rm-lb">WhatsApp</label><input class="rm-in" id="rm-whatsapp" name="whatsapp" type="tel" required></div>
-        </div>
-        <label style="display:flex;align-items:flex-start;gap:10px;font-size:11.5px;color:#5a6577;font-family:'Lora',Georgia,serif;line-height:1.55;cursor:pointer;margin-top:2px;">
-          <input type="checkbox" name="privacidad" required style="margin-top:2px;width:14px;height:14px;flex:none;cursor:pointer;accent-color:#1b2430;">
-          <span>He leído y acepto el <a href="https://riskmathics.com/avisoprivacidad" target="_blank" rel="noopener" style="color:#1b2430;font-weight:600;text-decoration:underline;text-underline-offset:2px;">Aviso de Privacidad</a> y autorizo el tratamiento de mis datos y ser contactado por RiskMathics.</span>
-        </label>
-        <button type="submit" style="background:#c8a04a;color:#1b1710;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:17px;border-radius:4px;cursor:pointer;font-family:'Poppins',Arial,sans-serif;margin-top:4px;">Quiero el temario</button>
-        <p style="font-size:10.5px;color:#9aa4b4;margin:0;text-align:center;font-family:'Poppins',Arial,sans-serif;letter-spacing:.4px;">Verificamos tu correo y tu teléfono con un código · Datos protegidos</p>
-      </form>
-      <div id="rm-verify" style="display:none;"></div>
-      <div id="rm-thanks" style="display:none;border:1px solid #b7e4c7;background:#f6fdf9;color:#1b4332;padding:22px;border-radius:6px;font-size:14.5px;font-family:'Lora',Georgia,serif;line-height:1.6;"><b>Listo.</b> Recibimos y verificamos tus datos. Te enviamos el temario a tu correo y un asesor te contactará.</div>
-      <div style="margin-top:34px;padding-top:28px;border-top:1px solid #edf0f5;text-align:center;">
-        <div style="font-size:10px;color:#93A0B4;letter-spacing:2.2px;font-family:'Poppins',Arial,sans-serif;">O INSCRÍBETE Y PAGA DIRECTO</div>
-        <div style="font-size:30px;font-weight:300;color:#0a1f3c;margin:14px 0 2px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">MXN $75,400</div>
-        <div style="font-size:11px;color:#9aa4b4;font-family:'Lora',Georgia,serif;font-style:italic;margin-bottom:18px;">IVA incluido</div>
-        <div style="display:grid;gap:10px;">
-          <a id="rm-paypal" href="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=treasury" target="_blank" rel="noopener" style="background:#c8a04a;color:#1b1710;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:15px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con PayPal</a>
-          <a id="rm-stripe" href="https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f" target="_blank" rel="noopener" style="background:transparent;border:1.5px solid #0a1f3c;color:#0a1f3c;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con tarjeta · Stripe</a>
-        </div>
-        <p style="font-size:10px;color:#b3bcc9;margin-top:16px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">100% seguro · SSL · PayPal Verified · RiskMathics Financial Institute</p>
-      </div>
-    </div>
-  </div>
+ <div style="max-width:600px;margin:0 auto;">
+ <div style="text-align:center;margin-bottom:38px;">
+ <div style="color:#c8a04a;letter-spacing:3px;font-size:10.5px;font-weight:500;">INSCRIPCIÓN · CUPO LIMITADO</div>
+ <h2 style="font-size:26px;margin:16px 0 0;font-weight:600;line-height:1.25;letter-spacing:.3px;">Asegura tu lugar</h2>
+ <div style="width:50px;height:2px;background:#c8a04a;margin:18px auto;"></div>
+ <p style="color:#c2cee0;font-size:15px;margin:0;font-family:'Lora',Georgia,serif;font-style:italic;">Déjanos tus datos, verifica tu correo y tu WhatsApp,<br>y recibe el temario completo. Sin compromiso.</p>
+ </div>
+ <div style="background:#ffffff;color:#1b2430;border-radius:6px;padding:44px 42px;border:1px solid rgba(255,255,255,.14);box-shadow:0 2px 24px rgba(0,0,0,.16);">
+ <form id="rm-lead" onsubmit="return rmSubmit(event)" style="display:grid;gap:22px;">
+ <div><label class="rm-lb">Nombre(s)</label><input class="rm-in" name="nombre" required></div>
+ <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
+ <div><label class="rm-lb">Apellido paterno</label><input class="rm-in" name="apellido_paterno" required></div>
+ <div><label class="rm-lb">Apellido materno</label><input class="rm-in" name="apellido_materno"></div>
+ </div>
+ <div><label class="rm-lb">Email corporativo</label><input class="rm-in" type="email" name="email" required></div>
+ <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
+ <div><label class="rm-lb">Puesto</label><input class="rm-in" name="puesto" required></div>
+ <div><label class="rm-lb">Institución / Empresa</label><input class="rm-in" name="empresa" required></div>
+ </div>
+ <div><label class="rm-lb">Sector financiero / industria</label>
+ <select class="rm-in" name="sector" required>
+ <option value="" disabled selected></option>
+ <option>AFORE / Fondos de Pensión</option>
+ <option>Aseguradora / Insurance</option>
+ <option>Banca</option>
+ <option>Casa de Bolsa / Broker Dealer</option>
+ <option>Asset Manager</option>
+ <option>Hedge Fund</option>
+ <option>Family Office</option>
+ <option>Corporativo</option>
+ <option>PyME</option>
+ <option>Gobierno</option>
+ <option>Energía</option>
+ <option>Otro</option>
+ </select>
+ </div>
+ <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
+ <div><label class="rm-lb">País</label>
+ <select class="rm-in" name="pais" required>
+ <option value="" disabled data-iso=""></option>
+ <option data-iso="mx" selected>México</option>
+ <option data-iso="us">Estados Unidos</option>
+ <option data-iso="es">España</option>
+ <option data-iso="co">Colombia</option>
+ <option data-iso="pe">Perú</option>
+ <option data-iso="cl">Chile</option>
+ <option data-iso="ar">Argentina</option>
+ <option data-iso="ec">Ecuador</option>
+ <option data-iso="gt">Guatemala</option>
+ <option data-iso="pa">Panamá</option>
+ <option data-iso="cr">Costa Rica</option>
+ <option data-iso="do">República Dominicana</option>
+ <option data-iso="bo">Bolivia</option>
+ <option data-iso="uy">Uruguay</option>
+ <option data-iso="py">Paraguay</option>
+ <option data-iso="ve">Venezuela</option>
+ <option data-iso="hn">Honduras</option>
+ <option data-iso="sv">El Salvador</option>
+ <option data-iso="ni">Nicaragua</option>
+ <option data-iso="br">Brasil</option>
+ <option data-iso="ca">Canadá</option>
+ <option data-iso="">Otro</option>
+ </select>
+ </div>
+ <div><label class="rm-lb">WhatsApp</label><input class="rm-in" id="rm-whatsapp" name="whatsapp" type="tel" required></div>
+ </div>
+ <label style="display:flex;align-items:flex-start;gap:10px;font-size:11.5px;color:#5a6577;font-family:'Lora',Georgia,serif;line-height:1.55;cursor:pointer;margin-top:2px;">
+ <input type="checkbox" name="privacidad" required style="margin-top:2px;width:14px;height:14px;flex:none;cursor:pointer;accent-color:#1b2430;">
+ <span>He leído y acepto el <a href="https://riskmathics.com/avisoprivacidad" target="_blank" rel="noopener" style="color:#1b2430;font-weight:600;text-decoration:underline;text-underline-offset:2px;">Aviso de Privacidad</a> y autorizo el tratamiento de mis datos y ser contactado por RiskMathics.</span>
+ </label>
+ <button type="submit" style="background:#c8a04a;color:#1b1710;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:17px;border-radius:4px;cursor:pointer;font-family:'Poppins',Arial,sans-serif;margin-top:4px;">Quiero el temario</button>
+ <p style="font-size:10.5px;color:#9aa4b4;margin:0;text-align:center;font-family:'Poppins',Arial,sans-serif;letter-spacing:.4px;">Verificamos tu correo y tu teléfono con un código · Datos protegidos</p>
+ </form>
+ <div id="rm-verify" style="display:none;"></div>
+ <div id="rm-thanks" style="display:none;border:1px solid #b7e4c7;background:#f6fdf9;color:#1b4332;padding:22px;border-radius:6px;font-size:14.5px;font-family:'Lora',Georgia,serif;line-height:1.6;"><b>Listo.</b> Recibimos y verificamos tus datos. Te enviamos el temario a tu correo y un asesor te contactará.</div>
+ <div style="margin-top:34px;padding-top:28px;border-top:1px solid #edf0f5;text-align:center;">
+ <div style="font-size:10px;color:#93A0B4;letter-spacing:2.2px;font-family:'Poppins',Arial,sans-serif;">O INSCRÍBETE Y PAGA DIRECTO</div>
+ <div style="font-size:30px;font-weight:300;color:#0a1f3c;margin:14px 0 2px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">MXN $75,400</div>
+ <div style="font-size:11px;color:#9aa4b4;font-family:'Lora',Georgia,serif;font-style:italic;margin-bottom:18px;">IVA incluido</div>
+ <div style="display:grid;gap:10px;">
+ <a id="rm-paypal" href="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=treasury" target="_blank" rel="noopener" style="background:#c8a04a;color:#1b1710;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:15px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con PayPal</a>
+ <a id="rm-stripe" href="https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f" target="_blank" rel="noopener" style="background:transparent;border:1.5px solid #0a1f3c;color:#0a1f3c;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con tarjeta · Stripe</a>
+ </div>
+ <p style="font-size:10px;color:#b3bcc9;margin-top:16px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">100% seguro · SSL · PayPal Verified · RiskMathics Financial Institute</p>
+ </div>
+ </div>
+ </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 <script>
@@ -211,7 +211,7 @@ if(window.intlTelInput&&tel){rmIti=window.intlTelInput(tel,{initialCountry:"mx",
 if(sel){sel.addEventListener('change',function(){var o=sel.options[sel.selectedIndex];if(o&&o.dataset.iso&&rmIti)rmIti.setCountry(o.dataset.iso);});
 tel.addEventListener('countrychange',function(){if(!rmIti)return;var c=rmIti.getSelectedCountryData();for(var i=0;i<sel.options.length;i++){if((sel.options[i].dataset.iso||'')===c.iso2){sel.selectedIndex=i;break;}}});}}})();
 async function rmPost(p){const r=await fetch(RM_VURL,{method:"POST",headers:{"Content-Type":"application/json","apikey":RM_VKEY,"Authorization":"Bearer "+RM_VKEY},body:JSON.stringify(p)});return r.json();}
-async function rmSubmit(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));if(!f.privacidad||!f.privacidad.checked){alert("Debes aceptar el Aviso de Privacidad para continuar.");return false;}/*RM_FREE*/var _dom=((d.email||"").toLowerCase().split("@")[1]||"").trim();var _free=["gmail.com","googlemail.com","hotmail.com","hotmail.es","hotmail.com.mx","hotmail.co.uk","hotmail.fr","hotmail.de","hotmail.it","outlook.com","outlook.es","outlook.com.mx","outlook.co.uk","live.com","live.com.mx","live.mx","live.fr","msn.com","yahoo.com","yahoo.com.mx","yahoo.es","yahoo.co.uk","yahoo.fr","yahoo.de","yahoo.it","yahoo.ca","ymail.com","rocketmail.com","aol.com","icloud.com","me.com","mac.com","proton.me","protonmail.com","pm.me","zoho.com","zohomail.com","mail.com","email.com","gmx.com","gmx.de","gmx.net","yandex.com","yandex.ru","yandex.mx","tutanota.com","tuta.io","fastmail.com","hey.com","inbox.com","gmx.es","rediffmail.com","qq.com","163.com","126.com","sina.com","naver.com","daum.net","hanmail.net","web.de","t-online.de","orange.fr","free.fr","laposte.net","wanadoo.fr","libero.it","virgilio.it","terra.com.mx","prodigy.net.mx","att.net","comcast.net","verizon.net","sbcglobal.net"];if(_dom&&_free.indexOf(_dom)>=0){var _w=document.getElementById("rm-free-warn");if(!_w){_w=document.createElement("div");_w.id="rm-free-warn";var _sb=f.querySelector("button[type=submit]");if(_sb&&_sb.parentNode){_sb.parentNode.insertBefore(_w,_sb);}else{f.appendChild(_w);}}_w.innerHTML='<div style="border:1px solid #d8dee9;background:#f7f9fc;padding:14px 16px;margin:0 0 4px;font-family:Lora,Georgia,serif;font-size:13.5px;color:#2c3950;line-height:1.6;border-radius:8px;">Solo aceptamos <b>correos corporativos</b> — direcciones como @gmail, @hotmail, @outlook o @yahoo no son válidas. Usa el correo de tu empresa.<br><span style="display:block;margin-top:6px;">¿No tienes correo corporativo?</span><a href="https://wa.me/525579894034?text='+encodeURIComponent("Hola, ¿qué tal? Quiero informes del programa: "+(document.title||"").slice(0,70)+" — no tengo correo corporativo.")+'" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;background:#25D366;color:#fff;padding:10px 18px;border-radius:7px;text-decoration:none;font-family:Poppins,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;">ESCRÍBENOS POR WHATSAPP →</a></div>';_w.scrollIntoView({behavior:"smooth",block:"center"});var _b=f.querySelector("button[type=submit]");if(_b){_b.textContent="QUIERO EL TEMARIO";_b.disabled=false;}return false;}
+async function rmSubmit(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));if(!f.privacidad||!f.privacidad.checked){alert("Debes aceptar el Aviso de Privacidad para continuar.");return false;}/*RM_FREE*/var _dom=((d.email||"").toLowerCase().split("@")[1]||"").trim();var _free=["gmail.com","googlemail.com","hotmail.com","hotmail.es","hotmail.com.mx","hotmail.co.uk","hotmail.fr","hotmail.de","hotmail.it","outlook.com","outlook.es","outlook.com.mx","outlook.co.uk","live.com","live.com.mx","live.mx","live.fr","msn.com","yahoo.com","yahoo.com.mx","yahoo.es","yahoo.co.uk","yahoo.fr","yahoo.de","yahoo.it","yahoo.ca","ymail.com","rocketmail.com","aol.com","icloud.com","me.com","mac.com","proton.me","protonmail.com","pm.me","zoho.com","zohomail.com","mail.com","email.com","gmx.com","gmx.de","gmx.net","yandex.com","yandex.ru","yandex.mx","tutanota.com","tuta.io","fastmail.com","hey.com","inbox.com","gmx.es","rediffmail.com","qq.com","163.com","126.com","sina.com","naver.com","daum.net","hanmail.net","web.de","t-online.de","orange.fr","free.fr","laposte.net","wanadoo.fr","libero.it","virgilio.it","terra.com.mx","prodigy.net.mx","att.net","comcast.net","verizon.net","sbcglobal.net"];if(_dom&&_free.indexOf(_dom)>=0){var _w=document.getElementById("rm-free-warn");if(!_w){_w=document.createElement("div");_w.id="rm-free-warn";var _sb=f.querySelector("button[type=submit]");if(_sb&&_sb.parentNode){_sb.parentNode.insertBefore(_w,_sb);}else{f.appendChild(_w);}}_w.innerHTML='<div style="border:1px solid #d8dee9;background:#f7f9fc;padding:14px 16px;margin:0 0 4px;font-family:Lora,Georgia,serif;font-size:13.5px;color:#2c3950;line-height:1.6;border-radius:8px;">Solo aceptamos <b>correos corporativos</b>, direcciones como @gmail, @hotmail, @outlook o @yahoo no son válidas. Usa el correo de tu empresa.<br><span style="display:block;margin-top:6px;">¿No tienes correo corporativo?</span><a href="https://wa.me/525579894034?text='+encodeURIComponent("Hola, ¿qué tal? Quiero informes del programa: "+(document.title||"").slice(0,70)+", no tengo correo corporativo.")+'" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;background:#25D366;color:#fff;padding:10px 18px;border-radius:7px;text-decoration:none;font-family:Poppins,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;">ESCRÍBENOS POR WHATSAPP →</a></div>';_w.scrollIntoView({behavior:"smooth",block:"center"});var _b=f.querySelector("button[type=submit]");if(_b){_b.textContent="QUIERO EL TEMARIO";_b.disabled=false;}return false;}
 let phone="";if(rmIti){try{phone=rmIti.getNumber()||"";}catch(_){phone="";}if(!phone){var dial="+"+((rmIti.getSelectedCountryData()||{}).dialCode||"52");var raw=(d.whatsapp||"").replace(/[\s\-()]/g,"");phone=raw.startsWith("+")?raw:dial+raw.replace(/^0+/,"");}}
 else{phone=(d.whatsapp||"").trim().replace(/[\s\-()]/g,"");if(phone&&!phone.startsWith("+"))phone="+52"+phone.replace(/^0+/,"");}
 if(!phone||phone.length<10){alert("Escribe tu WhatsApp completo.");return false;}
