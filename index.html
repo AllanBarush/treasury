@@ -1,103 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TREASURY MASTERY | RiskMathics</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Treasury, Finance Operations &amp; Cash Management | RiskMathics</title>
+<meta name="description" content="Treasury, Finance Operations and Cash Management. Nivel I Operate. 20 sesiones en vivo, 50 horas. Inicia 31 de agosto de 2026, Virtual Live, lunes, miércoles y jueves de 18:30 a 21:00 h CDMX. RiskMathics Treasury Leadership Academy.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
+:root{--paper:#F4F1EA;--paper2:#ECE7DB;--card:#FFFFFF;--ink:#26303C;--soft:#5D6B78;--navy:#0A2136;--navy2:#123049;--teal:#0D8A8A;--tealD:#0A6E6E;--gold:#C89B3C;--rule:#DDD5C4;--rule2:#CFC6B2}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#0F172A;--navy-light:#1E293B;--navy-mid:#334155;--coral:#F97316;--blue:#2563EB;--green:#10B981;--white:#F8FAFC;--gray:#94A3B8;--copper:#D97706}
-body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);line-height:1.6}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-nav{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.06)}nav .container{display:flex;justify-content:space-between;align-items:center}.logo{font-family:'Poppins',sans-serif;font-weight:300;font-size:13px;letter-spacing:6px;text-transform:uppercase;color:var(--gray)}.logo span{display:block;font-size:10px;letter-spacing:4px;color:var(--blue);margin-top:2px}nav a{color:var(--blue);font-size:13px;text-decoration:none;font-weight:500;letter-spacing:1px;text-transform:uppercase}
-.hero{padding:100px 0 80px;text-align:center}.hero-label{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--blue);margin-bottom:24px;font-weight:500}.hero h1{font-family:'Poppins',sans-serif;font-size:clamp(32px,5vw,64px);font-weight:700;line-height:1.05;margin-bottom:20px;letter-spacing:-1px}.hero h1 em{font-style:normal;color:var(--blue)}.hero-sub{font-family:'Lora',serif;font-size:clamp(16px,2vw,22px);color:var(--gray);max-width:700px;margin:0 auto 40px}.hero-meta{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:48px}.hero-meta div{text-align:center}.hero-meta .val{font-family:'Poppins',sans-serif;font-size:28px;font-weight:600;color:var(--blue)}.hero-meta .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:4px}
-.cta-btn{display:inline-block;background:var(--blue);color:var(--white);padding:16px 48px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .3s;border:none;cursor:pointer}.cta-btn:hover{opacity:.9;transform:translateY(-1px)}
-section{padding:80px 0;border-top:1px solid rgba(255,255,255,0.04)}section h2{font-family:'Poppins',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:600;margin-bottom:16px}section h2 span{color:var(--blue)}.section-sub{font-family:'Lora',serif;color:var(--gray);font-size:17px;max-width:650px;margin-bottom:48px}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}.card{background:var(--navy-light);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:36px 28px}.card h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin-bottom:12px}.card p{color:var(--gray);font-size:14px;line-height:1.7}.card .num{font-family:'Poppins',sans-serif;font-size:48px;font-weight:700;color:var(--blue);opacity:.3;margin-bottom:12px}
-.module-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.module-item{background:var(--navy-light);border-left:3px solid var(--blue);padding:24px;border-radius:0 8px 8px 0}.module-item h4{font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px}.module-item p{color:var(--gray);font-size:13px}
-.form-section{background:var(--navy-light);border-radius:12px;padding:60px 48px;max-width:700px;margin:0 auto}.form-section h2{text-align:center;margin-bottom:8px}.form-section .section-sub{text-align:center;margin:0 auto 36px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.form-grid .full{grid-column:1/-1}.form-group label{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:6px;font-weight:500}.form-group input,.form-group select{width:100%;padding:12px 16px;background:var(--navy);border:1px solid var(--navy-mid);border-radius:6px;color:var(--white);font-family:'Inter',sans-serif;font-size:14px;transition:border-color .3s}.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--blue)}.form-group select option{background:var(--navy);color:var(--white)}.error-msg{color:#EF4444;font-size:11px;margin-top:4px;display:none}.form-group.error input,.form-group.error select{border-color:#EF4444}.form-group.error .error-msg{display:block}.submit-btn{width:100%;margin-top:24px}.success-msg{display:none;text-align:center;padding:40px}.success-msg h3{font-family:'Poppins',sans-serif;font-size:24px;color:var(--green);margin-bottom:12px}
-.pricing-box{text-align:center;background:var(--navy-light);border:1px solid var(--blue);border-radius:12px;padding:48px;max-width:500px;margin:0 auto}.pricing-box .price{font-family:'Poppins',sans-serif;font-size:48px;font-weight:700;color:var(--blue)}.pricing-box .curr{font-size:20px;font-weight:400;color:var(--gray)}.pricing-box .note{color:var(--gray);font-size:13px;margin-top:8px}
-footer{padding:40px 0;border-top:1px solid rgba(255,255,255,0.06);text-align:center}footer .logo-foot{font-family:'Poppins',sans-serif;font-weight:300;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gray)}footer p{color:var(--navy-mid);font-size:12px;margin-top:8px}
-@media(max-width:640px){.form-grid{grid-template-columns:1fr}.hero-meta{gap:24px}.form-section{padding:36px 20px}}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.75}
+h1,h2,h3,h4,.hd{font-family:'Poppins',Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.kicker{font-family:'Poppins',Arial,sans-serif;font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--teal);font-weight:600}
+.sec{padding:70px 0}
+.sec-alt{background:var(--paper2)}
+.sec-title{font-size:clamp(26px,3.6vw,38px);font-weight:800;color:var(--navy);line-height:1.15;margin:14px 0 8px}
+.sec-sub{font-style:italic;color:var(--soft);font-size:18px;max-width:760px}
+.rule{height:1px;background:var(--rule2);margin:24px 0}
+.mast{border-bottom:1px solid var(--rule2);background:var(--paper);position:sticky;top:0;z-index:50}
+.mast-in{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1120px;margin:0 auto}
+.mast-brand{font-family:'Poppins',Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy)}
+.mast-brand span{color:var(--teal)}
+.mast-nav{display:flex;gap:22px;font-family:'Poppins',Arial,sans-serif;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase}
+.mast-nav a{color:var(--soft);text-decoration:none}.mast-nav a:hover{color:var(--teal)}
+.mast-cta{background:var(--navy);color:#fff !important;padding:9px 18px;border-radius:4px;font-weight:600}
+@media(max-width:860px){.mast-nav a:not(.mast-cta){display:none}}
+.hero{padding:80px 0 66px;text-align:center;background:radial-gradient(1100px 520px at 50% -10%,rgba(13,138,138,.10),transparent),var(--paper)}
+.hero h1{font-size:clamp(34px,5.4vw,62px);font-weight:900;color:var(--navy);line-height:1.02;letter-spacing:-1px;max-width:900px;margin:14px auto 0}
+.hero-tag{font-family:'Poppins',Arial,sans-serif;font-size:clamp(17px,2.2vw,23px);color:var(--teal);font-weight:600;margin-top:20px}
+.hero-sub{font-style:italic;font-size:17px;color:var(--soft);margin:10px auto 0;max-width:640px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:30px 0 6px}
+.chip{font-family:'Poppins',Arial,sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--rule2);background:var(--card);color:var(--navy);padding:9px 15px;border-radius:30px;font-weight:600}
+.chip b{color:var(--teal)}
+.hero-ctas{display:flex;gap:14px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.btn{font-family:'Poppins',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:16px 34px;border-radius:4px;display:inline-block}
+.btn-primary{background:var(--teal);color:#fff}.btn-primary:hover{background:var(--tealD)}
+.btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}.btn-ghost:hover{background:rgba(10,33,54,.05)}
+p.ed{max-width:820px;margin:0 0 18px;color:var(--ink)}
+p.ed strong{color:var(--navy)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule2);border:1px solid var(--rule2);margin:38px 0}
+.stat{background:var(--card);padding:24px 16px;text-align:center}
+.stat .n{font-family:'Poppins',Arial,sans-serif;font-size:32px;font-weight:800;color:var(--teal);line-height:1}
+.stat .l{font-family:'Poppins',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--soft);margin-top:9px;line-height:1.5}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.tw{overflow-x:auto}
+table.ed{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--rule2);margin:26px 0;font-size:14.5px}
+table.ed th{font-family:'Poppins',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--navy);text-align:left;padding:12px 15px}
+table.ed td{padding:12px 15px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.ed tr:last-child td{border-bottom:none}
+table.ed td b{color:var(--navy)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+@media(max-width:820px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--rule2);border-top:3px solid var(--teal);padding:24px 22px}
+.card h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:9px;font-family:'Poppins',Arial,sans-serif}
+.card p{font-size:14.5px;color:var(--ink);line-height:1.6}
+.mod{border:1px solid var(--rule2);background:var(--card);margin-bottom:14px;display:flex;gap:0;flex-wrap:wrap}
+.mod-side{background:var(--navy);color:#fff;padding:18px 20px;min-width:150px;display:flex;flex-direction:column;justify-content:center}
+.mod-side .mn{font-family:'Poppins',Arial,sans-serif;font-size:12px;letter-spacing:1.5px;color:var(--gold);font-weight:600}
+.mod-side .md{font-family:'Poppins',Arial,sans-serif;font-size:12.5px;color:#cfe;margin-top:6px}
+.mod-side .ms{font-family:'Poppins',Arial,sans-serif;font-size:11px;color:#9fb6c4;margin-top:4px}
+.mod-body{padding:18px 22px;flex:1;min-width:260px}
+.mod-body h4{font-family:'Poppins',Arial,sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.mod-body p{font-size:14.5px;color:var(--soft);line-height:1.6}
+table.cal{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--rule2);font-size:13.5px;margin-top:24px}
+table.cal th{font-family:'Poppins',Arial,sans-serif;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#fff;background:var(--teal);padding:10px 12px;text-align:left}
+table.cal td{padding:9px 12px;border-bottom:1px solid var(--rule)}
+table.cal td:first-child{font-family:'Poppins',Arial,sans-serif;font-weight:700;color:var(--teal);width:44px}
+table.cal td b{color:var(--navy);font-family:'Poppins',Arial,sans-serif;font-size:12px}
+.cal-off td{background:var(--paper2);color:var(--soft);font-style:italic}
+.inv{max-width:600px;margin:36px auto 0;background:var(--navy);color:#fff;text-align:center;padding:48px 40px;border-radius:6px}
+.inv .k{font-family:'Poppins',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.inv .amt{font-family:'Poppins',Arial,sans-serif;font-size:46px;font-weight:800;margin:14px 0 2px}
+.inv .amt span{font-size:19px;font-weight:400;color:#9fb6c4}
+.inv .note{font-style:italic;color:#9fb6c4;font-size:14px;margin-bottom:22px}
+.inv ul{list-style:none;text-align:left;max-width:400px;margin:0 auto 26px}
+.inv li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px;color:#dbe6ee}
+.inv li::before{content:"·  ";color:var(--gold);font-weight:700}
+footer{background:var(--navy);color:#7f97a8;padding:38px 24px;text-align:center;font-family:'Poppins',Arial,sans-serif;font-size:12px;line-height:2}
+footer a{color:var(--gold);text-decoration:none}
+.fade{opacity:0;transform:translateY(14px);transition:all .7s ease}.fade.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
-<nav><div class="container"><div class="logo">RiskMathics<span>Financial Innovation Lab</span></div><a href="#register">Register Now</a></div></nav>
-<section class="hero"><div class="container">
-<div class="hero-label">Mastery Program &mdash; 2026</div>
-<h1>TREASURY, CASH &amp; FINANCE <em>OPERATIONS</em></h1>
-<p class="hero-sub">Master the critical disciplines of corporate treasury, cash management, and financial operations in an evolving digital landscape.</p>
-<div class="hero-meta">
-<div><div class="val">120+</div><div class="lbl">Hours</div></div>
-<div><div class="val">12</div><div class="lbl">Modules</div></div>
-<div><div class="val">Expert</div><div class="lbl">Faculty</div></div>
-<div><div class="val">Cert.</div><div class="lbl">Included</div></div>
-</div>
-<a href="#register" class="cta-btn">Secure Your Seat</a>
+
+<div class="mast"><div class="mast-in">
+  <div class="mast-brand">Treasury Leadership <span>Academy</span></div>
+  <nav class="mast-nav">
+    <a href="#programa">El Programa</a>
+    <a href="#audiencia">Audiencia</a>
+    <a href="#temario">Temario</a>
+    <a href="#calendario">Calendario</a>
+    <a href="#rm-enroll" class="mast-cta">Inscríbete</a>
+  </nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker">Nivel I · Operate · Virtual Live · Generación 2026</div>
+  <h1>Treasury, Finance Operations &amp; Cash Management</h1>
+  <div class="hero-tag">Cash bajo control. Operación sin sorpresas.</div>
+  <p class="hero-sub">Finance Operations, Payments, Reconciliation &amp; Cash Control</p>
+  <div class="chips">
+    <span class="chip"><b>Inicia 31 Ago 2026</b></span>
+    <span class="chip">Lun · Mié · Jue · 18:30 a 21:00 h</span>
+    <span class="chip">Virtual Live · CDMX</span>
+    <span class="chip"><b>20</b> sesiones · 50 horas</span>
+  </div>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="#rm-enroll">Inscríbete</a>
+    <a class="btn btn-ghost" href="#temario">Ver el programa</a>
+  </div>
+</div></header>
+
+<section class="sec" id="programa"><div class="wrap">
+  <div class="kicker">El Programa</div>
+  <h2 class="sec-title">El piso operativo del dinero, dominado.</h2>
+  <p class="sec-sub">Pagos, cobros, conciliación, multibanca, cash visibility, control y riesgo operativo. La operación diaria donde toda organización vive o se rompe.</p>
+  <div class="rule"></div>
+  <p class="ed">Al mercado no le faltan egresados de finanzas: le faltan profesionales de tesorería capaces de <strong>mover dinero con seguridad</strong>, interpretar tasas con criterio y mantener el cash visible bajo presión. Muchos candidatos llegan con credenciales académicas sólidas pero sin contexto operativo: hablan de valuación y mercados de capital, pero no de fechas valor, archivos de pago, portales bancarios, firmantes, partidas conciliatorias, validación de beneficiarios ni procedimientos de contingencia.</p>
+  <p class="ed">Toda organización vive o se rompe en el punto donde el dinero realmente se mueve. Ese punto no está en el discurso estratégico ni en la presentación al comité: está en la operación diaria. <strong>Treasury Operations y Cash Management no son una función de soporte: son infraestructura operativa.</strong> Cuando la tubería no está bien diseñada aparecen pagos duplicados, beneficiarios mal validados, saldos que no cuadran, cierres débiles, fraudes y decisiones financieras tomadas con información incompleta.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">20</div><div class="l">Sesiones en vivo de 2.5 horas</div></div>
+    <div class="stat"><div class="n">50</div><div class="l">Horas totales</div></div>
+    <div class="stat"><div class="n">10</div><div class="l">Módulos + War Room + Assessment</div></div>
+    <div class="stat"><div class="n">13</div><div class="l">Entregables ejecutivos aplicables</div></div>
+  </div>
 </div></section>
-<section id="about"><div class="container">
-<h2>Why <span>Treasury Mastery</span></h2>
-<p class="section-sub">Treasury operations are the backbone of financial stability. This program equips leaders with cutting-edge techniques in liquidity management, FX, and digital treasury.</p>
-<div class="grid-3">
-<div class="card"><div class="num">01</div><h3>Cash &amp; Liquidity Management</h3><p>Advanced cash flow forecasting, liquidity optimization, and working capital strategies for global operations.</p></div>
-<div class="card"><div class="num">02</div><h3>FX &amp; Risk Management</h3><p>Currency hedging, interest rate risk, counterparty risk, and treasury risk frameworks for multinational corporates.</p></div>
-<div class="card"><div class="num">03</div><h3>Digital Treasury &amp; Fintech</h3><p>Blockchain in payments, real-time treasury, API banking, and the future of corporate financial operations.</p></div>
-</div>
+
+<section class="sec sec-alt" id="audiencia"><div class="wrap">
+  <div class="kicker">Sectores, áreas y puestos objetivo</div>
+  <h2 class="sec-title">Diseñado para quien opera el dinero.</h2>
+  <p class="sec-sub">Nivel entry-to-medium. Para quien ejecuta pagos, cobros, conciliación y control de caja, y para quien los supervisa.</p>
+  <div class="tw"><table class="ed">
+    <tr><th>Sector</th><th>Dolor principal</th><th>Puestos objetivo</th></tr>
+    <tr><td><b>PyME</b></td><td>Pagos urgentes, conciliación tardía, caja sin visibilidad</td><td>Finance Manager, Treasury Analyst, AP/AR Lead</td></tr>
+    <tr><td><b>Empresa mediana</b></td><td>Multibanca creciendo sin gobierno</td><td>Treasury Lead, Cash Manager, Controller</td></tr>
+    <tr><td><b>Gran corporativo</b></td><td>Volumen, silos, payment factory y cierre</td><td>Treasury Ops Manager, Payments Lead</td></tr>
+    <tr><td><b>Banco / Casa de bolsa</b></td><td>Trazabilidad, back office, pagos, conciliación</td><td>Back Office, Middle Office, Treasury Ops</td></tr>
+    <tr><td><b>SOFOM / SOFIPO</b></td><td>Cobranza, fondeo y control de caja</td><td>Finance Lead, Treasury, Operaciones</td></tr>
+  </table></div>
 </div></section>
-<section id="modules"><div class="container">
-<h2>Program <span>Structure</span></h2>
-<p class="section-sub">Twelve comprehensive modules covering the full spectrum of treasury and financial operations.</p>
-<div class="module-list">
-<div class="module-item"><h4>Module 1: Treasury Fundamentals</h4><p>Core treasury functions, organizational structures, and governance frameworks.</p></div>
-<div class="module-item"><h4>Module 2: Cash Management</h4><p>Cash positioning, pooling structures, and payment/collection optimization.</p></div>
-<div class="module-item"><h4>Module 3: Liquidity Planning</h4><p>Short and long-term liquidity forecasting and stress testing methodologies.</p></div>
-<div class="module-item"><h4>Module 4: FX Operations</h4><p>Foreign exchange markets, hedging strategies, and multi-currency management.</p></div>
-<div class="module-item"><h4>Module 5: Interest Rate Management</h4><p>Yield curve analysis, interest rate derivatives, and ALM principles.</p></div>
-<div class="module-item"><h4>Module 6: Trade Finance</h4><p>Letters of credit, supply chain finance, and international trade instruments.</p></div>
-<div class="module-item"><h4>Module 7: Bank Relationship Management</h4><p>Bank scoring, RFP processes, and multi-bank technology platforms.</p></div>
-<div class="module-item"><h4>Module 8: Treasury Technology</h4><p>TMS selection, implementation, and integration with ERP systems.</p></div>
-<div class="module-item"><h4>Module 9: Regulatory &amp; Compliance</h4><p>IFRS, SOX, Dodd-Frank, and EMIR implications for treasury operations.</p></div>
-<div class="module-item"><h4>Module 10: Investment Management</h4><p>Short-term investment policies, money market instruments, and portfolio management.</p></div>
-<div class="module-item"><h4>Module 11: Digital Treasury</h4><p>APIs, real-time payments, virtual accounts, and blockchain applications.</p></div>
-<div class="module-item"><h4>Module 12: Strategic Treasury</h4><p>M&A treasury integration, capital structure optimization, and board-level reporting.</p></div>
-</div>
+
+<section class="sec"><div class="wrap">
+  <div class="kicker">Metodología</div>
+  <h2 class="sec-title">Learning by doing.</h2>
+  <div class="grid3">
+    <div class="card"><h4>Casos con datos reales</h4><p>Cada módulo combina objetivos medibles, temario profundo y práctica con archivos, portales y estados de cuenta reales de tesorería.</p></div>
+    <div class="card"><h4>Mini War Rooms por módulo</h4><p>Simulaciones calibradas a nivel entry-to-medium: el participante decide en tiempo real ante fallas de pago, fraude o descuadres.</p></div>
+    <div class="card"><h4>Entregables aplicables</h4><p>Sales con un Treasury Operating System propio: procedimientos, checklists, forecast a 13 semanas y controles listos para tu operación.</p></div>
+  </div>
 </div></section>
-<section id="pricing"><div class="container">
-<h2 style="text-align:center">Investment</h2>
-<p class="section-sub" style="text-align:center;margin:0 auto 48px">Comprehensive treasury mastery for the modern financial leader.</p>
-<div class="pricing-box">
-<div class="price">$85,000 <span class="curr">MXN</span></div>
-<div class="note">Per participant &bull; Includes all materials, certification &amp; networking events</div>
-<a href="#register" class="cta-btn" style="margin-top:24px">Register Now</a>
-</div>
+
+<section class="sec sec-alt" id="temario"><div class="wrap">
+  <div class="kicker">Temario · 10 módulos · 20 sesiones</div>
+  <h2 class="sec-title">Del modelo operativo a la defensa antifraude.</h2>
+  <div class="rule"></div>
+  <div class="mod"><div class="mod-side"><div class="mn">M1</div><div class="md">31 Ago</div><div class="ms">1 sesión</div></div><div class="mod-body"><h4>Modelo Operativo de Treasury, Cash &amp; Finance Operations</h4><p>Cómo se conecta la tubería del dinero: Finance Ops, Treasury Ops y Cash Management sobre el mismo flujo. Mapa de procesos, roles, firmantes y controles.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M2</div><div class="md">2 a 3 Sep</div><div class="ms">2 sesiones</div></div><div class="mod-body"><h4>Matemáticas Financieras para Operaciones de Tesorería</h4><p>Valor del dinero en el tiempo, fechas valor, tasas efectivas, descuento, devengo e intereses aplicados a la operación diaria.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M3</div><div class="md">7 a 10 Sep</div><div class="ms">3 sesiones</div></div><div class="mod-body"><h4>Tasas, FX &amp; Money Markets</h4><p>Curvas, tasas de referencia, tipo de cambio y mercados de dinero, leídos con criterio operativo y no de trading.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M4</div><div class="md">14 a 17 Sep</div><div class="ms">2 sesiones</div></div><div class="mod-body"><h4>Infraestructura Bancaria, Multibanca y Conectividad</h4><p>Portales, tokens, host-to-host, API banking, formatos de archivo y gobierno de la operación multibanca.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M5</div><div class="md">21 a 23 Sep</div><div class="ms">2 sesiones</div></div><div class="mod-body"><h4>Pagos, Cobros y Operaciones de Dispersión</h4><p>Archivos de pago, dispersión de nómina y proveedores, validación de beneficiarios, autorizaciones y manejo de excepciones.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M6</div><div class="md">24 a 28 Sep</div><div class="ms">2 sesiones</div></div><div class="mod-body"><h4>Conciliación, Interfaz Contable y Disciplina de Cierre</h4><p>Conciliación bancaria, partidas conciliatorias, interfaz con contabilidad y cierre mensual sin sorpresas.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M7</div><div class="md">30 Sep a 1 Oct</div><div class="ms">2 sesiones</div></div><div class="mod-body"><h4>Cash Positioning, Cash Visibility y Forecast a 13 Semanas</h4><p>Posición diaria de caja, visibilidad de liquidez y forecast operativo de 13 semanas con análisis de variaciones semana contra semana.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M8</div><div class="md">5 a 7 Oct</div><div class="ms">2 sesiones</div></div><div class="mod-body"><h4>Riesgo Operativo, Fraude y Controles de Pago en Tesorería</h4><p>Tipologías de fraude, segregación de funciones, doble control, validación de beneficiarios y defensa antifraude.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M9</div><div class="md">8 Oct</div><div class="ms">1 sesión</div></div><div class="mod-body"><h4>Operaciones de Tesorería Gubernamental</h4><p>Particularidades del sector público: cuentas, controles, evidencias y cumplimiento en la operación de pagos.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">M10</div><div class="md">12 Oct</div><div class="ms">1 sesión</div></div><div class="mod-body"><h4>Fundamentos de AI para Finance Operations, Treasury &amp; Cash Management</h4><p>Cómo la IA asiste conciliación, detección de anomalías y forecasting, siempre con criterio humano y controles.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">WAR</div><div class="md">14 Oct</div><div class="ms">1 sesión</div></div><div class="mod-body"><h4>Executive War Room Simulation</h4><p>El equipo es la tesorería en plena crisis: falla de pago, fraude o descuadre. Decisiones en tiempo real bajo presión.</p></div></div><div class="mod"><div class="mod-side"><div class="mn">FIN</div><div class="md">15 Oct</div><div class="ms">1 sesión</div></div><div class="mod-body"><h4>Final Executive Assessment</h4><p>Evaluación integral del programa y cierre. Certificación RiskMathics Treasury Leadership Academy, Nivel I.</p></div></div>
 </div></section>
-<section id="register"><div class="container">
-<div class="form-section">
-<h2>Reserve Your <span>Seat</span></h2>
-<p class="section-sub">Complete the form below. A program advisor will contact you within 24 hours.</p>
-<form id="leadForm" novalidate>
-<div class="form-grid">
-<div class="form-group"><label>First Name *</label><input type="text" id="firstName" required><div class="error-msg">Required</div></div>
-<div class="form-group"><label>Surname (Paterno) *</label><input type="text" id="surname" required><div class="error-msg">Required</div></div>
-<div class="form-group"><label>Last Name (Materno) *</label><input type="text" id="lastName" required><div class="error-msg">Required</div></div>
-<div class="form-group"><label>Title *</label><input type="text" id="title" required><div class="error-msg">Required</div></div>
-<div class="form-group"><label>Company *</label><input type="text" id="company" required><div class="error-msg">Required</div></div>
-<div class="form-group"><label>Business Email *</label><input type="email" id="bizEmail" required placeholder="name@company.com"><div class="error-msg">Use a corporate email (no Gmail, Outlook, Hotmail, Yahoo, etc.)</div></div>
-<div class="form-group full"><label>Sector *</label><select id="sector" required><option value="">Select your sector</option><option>Corporativo</option><option>Seguros</option><option>Broker Dealer</option><option>Hedge Fund</option><option>FCM</option><option>Banking</option><option>Pension</option></select><div class="error-msg">Please select a sector</div></div>
-</div>
-<button type="submit" class="cta-btn submit-btn">Submit Registration</button>
-</form>
-<div class="success-msg" id="successMsg"><h3>Thank You</h3><p>Your registration has been received. A program advisor will reach out within 24 hours.</p></div>
-</div>
+
+<section class="sec" id="calendario"><div class="wrap">
+  <div class="kicker">Calendario · Generación 2026</div>
+  <h2 class="sec-title">31 de agosto a 15 de octubre de 2026.</h2>
+  <p class="sec-sub">Virtual Live. Lunes, miércoles y jueves de 18:30 a 21:00 h (CDMX). No hay sesión el miércoles 16 de septiembre (feriado nacional).</p>
+  <div class="tw"><table class="cal"><tr><th>Sesión</th><th>Fecha</th><th>Día</th><th>Contenido</th></tr><tr><td>1</td><td><b>31 ago</b></td><td>Lunes</td><td>M1. Modelo Operativo de Treasury, Cash &amp; Finance Operations</td></tr><tr><td>2</td><td><b>2 sep</b></td><td>Miércoles</td><td>M2. Matemáticas Financieras (1/2)</td></tr><tr><td>3</td><td><b>3 sep</b></td><td>Jueves</td><td>M2. Matemáticas Financieras (2/2)</td></tr><tr><td>4</td><td><b>7 sep</b></td><td>Lunes</td><td>M3. Tasas, FX &amp; Money Markets (1/3)</td></tr><tr><td>5</td><td><b>9 sep</b></td><td>Miércoles</td><td>M3. Tasas, FX &amp; Money Markets (2/3)</td></tr><tr><td>6</td><td><b>10 sep</b></td><td>Jueves</td><td>M3. Tasas, FX &amp; Money Markets (3/3)</td></tr><tr><td>7</td><td><b>14 sep</b></td><td>Lunes</td><td>M4. Infraestructura Bancaria y Multibanca (1/2)</td></tr><tr class="cal-off"><td>&mdash;</td><td><b>16 sep</b></td><td>Miércoles</td><td>Sin sesión. Feriado nacional (Independencia)</td></tr><tr><td>8</td><td><b>17 sep</b></td><td>Jueves</td><td>M4. Infraestructura Bancaria y Multibanca (2/2)</td></tr><tr><td>9</td><td><b>21 sep</b></td><td>Lunes</td><td>M5. Pagos, Cobros y Dispersión (1/2)</td></tr><tr><td>10</td><td><b>23 sep</b></td><td>Miércoles</td><td>M5. Pagos, Cobros y Dispersión (2/2)</td></tr><tr><td>11</td><td><b>24 sep</b></td><td>Jueves</td><td>M6. Conciliación y Cierre (1/2)</td></tr><tr><td>12</td><td><b>28 sep</b></td><td>Lunes</td><td>M6. Conciliación y Cierre (2/2)</td></tr><tr><td>13</td><td><b>30 sep</b></td><td>Miércoles</td><td>M7. Cash Positioning y Forecast 13 Semanas (1/2)</td></tr><tr><td>14</td><td><b>1 oct</b></td><td>Jueves</td><td>M7. Cash Positioning y Forecast 13 Semanas (2/2)</td></tr><tr><td>15</td><td><b>5 oct</b></td><td>Lunes</td><td>M8. Riesgo Operativo y Antifraude (1/2)</td></tr><tr><td>16</td><td><b>7 oct</b></td><td>Miércoles</td><td>M8. Riesgo Operativo y Antifraude (2/2)</td></tr><tr><td>17</td><td><b>8 oct</b></td><td>Jueves</td><td>M9. Operaciones de Tesorería Gubernamental</td></tr><tr><td>18</td><td><b>12 oct</b></td><td>Lunes</td><td>M10. Fundamentos de AI para Treasury Operations</td></tr><tr><td>19</td><td><b>14 oct</b></td><td>Miércoles</td><td>Executive War Room Simulation</td></tr><tr><td>20</td><td><b>15 oct</b></td><td>Jueves</td><td>Final Executive Assessment + Certificación</td></tr></table></div>
 </div></section>
-<footer><div class="container"><div class="logo-foot">R I S K M A T H I C S</div><p>&copy; 2026 RiskMathics Financial Innovation Lab. All rights reserved.</p><p>executive@riskmathics.com &bull; www.riskmathics.com</p></div></footer>
-<script>
-const blockedDomains=['gmail.com','googlemail.com','outlook.com','hotmail.com','live.com','msn.com','aol.com','yahoo.com','yahoo.com.mx','ymail.com','icloud.com','me.com','mac.com','protonmail.com','proton.me','tutanota.com','zoho.com','mail.com','gmx.com','gmx.net','inbox.com'];
-const form=document.getElementById('leadForm');const success=document.getElementById('successMsg');
-form.addEventListener('submit',function(e){e.preventDefault();let valid=true;document.querySelectorAll('.form-group').forEach(g=>g.classList.remove('error'));['firstName','surname','lastName','title','company'].forEach(id=>{if(!document.getElementById(id).value.trim()){document.getElementById(id).closest('.form-group').classList.add('error');valid=false;}});const email=document.getElementById('bizEmail').value.trim().toLowerCase();if(!email||!email.includes('@')){document.getElementById('bizEmail').closest('.form-group').classList.add('error');valid=false;}else{const domain=email.split('@')[1];if(blockedDomains.includes(domain)){document.getElementById('bizEmail').closest('.form-group').classList.add('error');valid=false;}}if(!document.getElementById('sector').value){document.getElementById('sector').closest('.form-group').classList.add('error');valid=false;}if(!valid)return;const data={firstName:document.getElementById('firstName').value,surname:document.getElementById('surname').value,lastName:document.getElementById('lastName').value,title:document.getElementById('title').value,company:document.getElementById('company').value,email:email,sector:document.getElementById('sector').value,program:'TREASURY MASTERY',timestamp:new Date().toISOString()};console.log('Lead captured:',JSON.stringify(data));form.style.display='none';success.style.display='block';});
-</script>
-<!-- ===== RISKMATHICS SALES MACHINE v3.2 (inyectable) ===== -->
+
+<section class="sec sec-alt"><div class="wrap">
+  <div class="kicker">Inversión</div>
+  <h2 class="sec-title">Formato ejecutivo. Cupo limitado.</h2>
+  <div class="inv">
+    <div class="k">Inversión</div>
+    <div class="amt">$53,000 <span>MXN + IVA</span></div>
+    <div class="note">Early bird $45,000 + IVA · Paquete corporativo: 5 lugares al precio de 4</div>
+    <ul>
+      <li>20 sesiones en vivo (50 horas) en formato Virtual Live</li>
+      <li>Treasury Operating System: procedimientos, checklists y plantillas</li>
+      <li>Mini War Rooms y Executive War Room Simulation</li>
+      <li>Certificado RiskMathics Treasury Leadership Academy, Nivel I</li>
+    </ul>
+    <a class="btn" style="background:var(--gold);color:#241803" href="#rm-enroll">Asegura tu lugar</a>
+  </div>
+</div></section>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 <style>
  #rm-enroll .iti{width:100%;}
@@ -113,9 +199,9 @@ form.addEventListener('submit',function(e){e.preventDefault();let valid=true;doc
 <section id="rm-enroll" style="background:linear-gradient(135deg,#12305c,#0a1f3c);color:#fff;padding:88px 22px;font-family:'Poppins',Arial,sans-serif;">
  <div style="max-width:600px;margin:0 auto;">
  <div style="text-align:center;margin-bottom:38px;">
- <div style="color:#c8a04a;letter-spacing:3px;font-size:10.5px;font-weight:500;">INSCRIPCIÓN · CUPO LIMITADO</div>
+ <div style="color:#0D8A8A;letter-spacing:3px;font-size:10.5px;font-weight:500;">INSCRIPCIÓN · CUPO LIMITADO</div>
  <h2 style="font-size:26px;margin:16px 0 0;font-weight:600;line-height:1.25;letter-spacing:.3px;">Asegura tu lugar</h2>
- <div style="width:50px;height:2px;background:#c8a04a;margin:18px auto;"></div>
+ <div style="width:50px;height:2px;background:#0D8A8A;margin:18px auto;"></div>
  <p style="color:#c2cee0;font-size:15px;margin:0;font-family:'Lora',Georgia,serif;font-style:italic;">Déjanos tus datos, verifica tu correo y tu WhatsApp,<br>y recibe el temario completo. Sin compromiso.</p>
  </div>
  <div style="background:#ffffff;color:#1b2430;border-radius:6px;padding:44px 42px;border:1px solid rgba(255,255,255,.14);box-shadow:0 2px 24px rgba(0,0,0,.16);">
@@ -181,18 +267,18 @@ form.addEventListener('submit',function(e){e.preventDefault();let valid=true;doc
  <input type="checkbox" name="privacidad" required style="margin-top:2px;width:14px;height:14px;flex:none;cursor:pointer;accent-color:#1b2430;">
  <span>He leído y acepto el <a href="https://riskmathics.com/avisoprivacidad" target="_blank" rel="noopener" style="color:#1b2430;font-weight:600;text-decoration:underline;text-underline-offset:2px;">Aviso de Privacidad</a> y autorizo el tratamiento de mis datos y ser contactado por RiskMathics.</span>
  </label>
- <button type="submit" style="background:#c8a04a;color:#1b1710;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:17px;border-radius:4px;cursor:pointer;font-family:'Poppins',Arial,sans-serif;margin-top:4px;">Quiero el temario</button>
+ <button type="submit" style="background:#0D8A8A;color:#ffffff;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:17px;border-radius:4px;cursor:pointer;font-family:'Poppins',Arial,sans-serif;margin-top:4px;">Quiero el temario</button>
  <p style="font-size:10.5px;color:#9aa4b4;margin:0;text-align:center;font-family:'Poppins',Arial,sans-serif;letter-spacing:.4px;">Verificamos tu correo y tu teléfono con un código · Datos protegidos</p>
  </form>
  <div id="rm-verify" style="display:none;"></div>
  <div id="rm-thanks" style="display:none;border:1px solid #b7e4c7;background:#f6fdf9;color:#1b4332;padding:22px;border-radius:6px;font-size:14.5px;font-family:'Lora',Georgia,serif;line-height:1.6;"><b>Listo.</b> Recibimos y verificamos tus datos. Te enviamos el temario a tu correo y un asesor te contactará.</div>
  <div style="margin-top:34px;padding-top:28px;border-top:1px solid #edf0f5;text-align:center;">
  <div style="font-size:10px;color:#93A0B4;letter-spacing:2.2px;font-family:'Poppins',Arial,sans-serif;">O INSCRÍBETE Y PAGA DIRECTO</div>
- <div style="font-size:30px;font-weight:300;color:#0a1f3c;margin:14px 0 2px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">MXN $75,400</div>
- <div style="font-size:11px;color:#9aa4b4;font-family:'Lora',Georgia,serif;font-style:italic;margin-bottom:18px;">IVA incluido</div>
+ <div style="font-size:30px;font-weight:300;color:#0a1f3c;margin:14px 0 2px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">MXN $53,000 <span style="font-size:15px;font-weight:400;color:#9aa4b4;letter-spacing:.5px;">+ IVA</span></div>
+ <div style="font-size:11px;color:#9aa4b4;font-family:'Lora',Georgia,serif;font-style:italic;margin-bottom:18px;">Total MXN $61,480 (IVA incluido) · 50 horas · 20 sesiones · Early bird $45,000 + IVA</div>
  <div style="display:grid;gap:10px;">
- <a id="rm-paypal" href="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=treasury" target="_blank" rel="noopener" style="background:#c8a04a;color:#1b1710;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:15px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con PayPal</a>
- <a id="rm-stripe" href="https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f" target="_blank" rel="noopener" style="background:transparent;border:1.5px solid #0a1f3c;color:#0a1f3c;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con tarjeta · Stripe</a>
+ <a id="rm-paypal" href="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=treasury" target="_blank" rel="noopener" style="background:#0D8A8A;color:#ffffff;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:15px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con PayPal</a>
+ <a id="rm-stripe" href="https://buy.stripe.com/7sYbIT47df1ecUV0wF2Ry3l" target="_blank" rel="noopener" style="background:transparent;border:1.5px solid #0a1f3c;color:#0a1f3c;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con tarjeta · Stripe</a>
  </div>
  <p style="font-size:10px;color:#b3bcc9;margin-top:16px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">100% seguro · SSL · PayPal Verified · RiskMathics Financial Institute</p>
  </div>
@@ -201,7 +287,7 @@ form.addEventListener('submit',function(e){e.preventDefault();let valid=true;doc
 </section>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 <script>
-const RM_CFG={id:"treasury",folleto:"https://riskmathics-folletos-2026.s3.amazonaws.com/treasury-2026.pdf",paypal:"https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=treasury",stripe:"https://buy.stripe.com/14A6oz8nt4mA0895QZ2Ry1f"};
+const RM_CFG={id:"treasury",folleto:"",paypal:"https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=treasury",stripe:"https://buy.stripe.com/7sYbIT47df1ecUV0wF2Ry3l"};
 const RM_VURL="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/verify-lead";
 const RM_VKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U";
 let RM_LEAD=null;var rmIti=null;
@@ -222,7 +308,7 @@ const b=f.querySelector('button[type=submit]');b.textContent="ENVIANDO CÓDIGOS.
 try{res=await rmPost({action:"start",phone:phone,email:d.email,privacidad:true});}catch(_){res={};}
 if(res&&res.ok){RM_LEAD.email_mode=res.email_mode||"fallback";f.style.display="none";rmShowCode(phone,d.email);}
 else{b.textContent="QUIERO EL TEMARIO";b.disabled=false;alert((res&&res.error)||"No pudimos enviar los códigos. Revisa tu correo y número.");}return false;}
-function rmShowCode(phone,email){var c=document.getElementById('rm-verify');c.innerHTML='<p style="margin:0 0 20px;font-size:14.5px;color:#1b2430;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Te enviamos <b>dos códigos</b> para verificar tu identidad:</p><div style="margin-bottom:18px;"><label style="display:block;font-family:\'Poppins\',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#93A0B4;text-transform:uppercase;margin-bottom:4px;">Código SMS · '+phone+'</label><input id="rm-otp" inputmode="numeric" style="width:100%;border:none;border-bottom:1px solid #dfe5ee;padding:9px 1px 10px;font-size:19px;letter-spacing:6px;font-family:\'Poppins\',Arial,sans-serif;color:#1b2430;outline:none;"></div><div style="margin-bottom:24px;"><label style="display:block;font-family:\'Poppins\',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#93A0B4;text-transform:uppercase;margin-bottom:4px;">Código por correo · '+email+'</label><input id="rm-otp-email" inputmode="numeric" style="width:100%;border:none;border-bottom:1px solid #dfe5ee;padding:9px 1px 10px;font-size:19px;letter-spacing:6px;font-family:\'Poppins\',Arial,sans-serif;color:#1b2430;outline:none;"></div><button type="button" onclick="rmVerify()" style="width:100%;background:#c8a04a;color:#1b1710;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:16px;border-radius:4px;cursor:pointer;font-family:\'Poppins\',Arial,sans-serif;">Verificar y recibir temario</button><p id="rm-vmsg" style="font-size:11.5px;color:#9aa4b4;margin-top:10px;font-family:\'Lora\',Georgia,serif;"></p>';c.style.display="block";document.getElementById('rm-otp').focus();}
+function rmShowCode(phone,email){var c=document.getElementById('rm-verify');c.innerHTML='<p style="margin:0 0 20px;font-size:14.5px;color:#1b2430;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Te enviamos <b>dos códigos</b> para verificar tu identidad:</p><div style="margin-bottom:18px;"><label style="display:block;font-family:\'Poppins\',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#93A0B4;text-transform:uppercase;margin-bottom:4px;">Código SMS · '+phone+'</label><input id="rm-otp" inputmode="numeric" style="width:100%;border:none;border-bottom:1px solid #dfe5ee;padding:9px 1px 10px;font-size:19px;letter-spacing:6px;font-family:\'Poppins\',Arial,sans-serif;color:#1b2430;outline:none;"></div><div style="margin-bottom:24px;"><label style="display:block;font-family:\'Poppins\',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#93A0B4;text-transform:uppercase;margin-bottom:4px;">Código por correo · '+email+'</label><input id="rm-otp-email" inputmode="numeric" style="width:100%;border:none;border-bottom:1px solid #dfe5ee;padding:9px 1px 10px;font-size:19px;letter-spacing:6px;font-family:\'Poppins\',Arial,sans-serif;color:#1b2430;outline:none;"></div><button type="button" onclick="rmVerify()" style="width:100%;background:#0D8A8A;color:#ffffff;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:16px;border-radius:4px;cursor:pointer;font-family:\'Poppins\',Arial,sans-serif;">Verificar y recibir temario</button><p id="rm-vmsg" style="font-size:11.5px;color:#9aa4b4;margin-top:10px;font-family:\'Lora\',Georgia,serif;"></p>';c.style.display="block";document.getElementById('rm-otp').focus();}
 async function rmVerify(){var code=(document.getElementById('rm-otp').value||"").trim();var ecode=(document.getElementById('rm-otp-email').value||"").trim();var m=document.getElementById('rm-vmsg');if(code.length<4||ecode.length<4){m.textContent="Escribe ambos códigos (SMS y correo).";return;}m.textContent="Verificando...";var res;
 try{res=await rmPost({action:"check",phone:RM_LEAD.phone,code:code,email:RM_LEAD.email,email_code:ecode,email_mode:RM_LEAD.email_mode,nombre:RM_LEAD.nombre,apellido:RM_LEAD.apellido,apellido_paterno:RM_LEAD.apellido_paterno,apellido_materno:RM_LEAD.apellido_materno,puesto:RM_LEAD.puesto,empresa:RM_LEAD.empresa,sector:RM_LEAD.sector,pais:RM_LEAD.pais,pais_iso:RM_LEAD.pais_iso,curso:RM_CFG.id,folleto:RM_CFG.folleto});}catch(_){res={};}
 if(res&&res.verified){document.getElementById('rm-verify').style.display="none";document.getElementById('rm-thanks').style.display="block";if(RM_CFG.folleto)window.open(RM_CFG.folleto,'_blank');}
@@ -231,6 +317,6 @@ else{m.textContent="Códigos incorrectos o expirados. Intenta de nuevo.";}}
 </script>
 <!-- ===== /SALES MACHINE v3.2 ===== -->
 
-<a href="#rm-enroll" style="position:fixed;bottom:22px;right:22px;z-index:99999;background:#c8a04a;color:#1b1710;font-family:'Poppins',Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 26px;border-radius:50px;text-decoration:none;box-shadow:0 10px 34px rgba(0,0,0,.32);">Inscríbete &rarr;</a>
-</body>
-</html>
+<footer>RISKMATHICS TREASURY LEADERSHIP ACADEMY &middot; A RISKMATHICS COMPANY<br>Informes: <a href="mailto:growth@riskmathics.com">growth@riskmathics.com</a> &middot; <a href="https://wa.me/525579894034" target="_blank" rel="noopener">WhatsApp +52 55 7989 4034</a><br>&copy; 2026 RiskMathics Financial Institute &middot; Learn. Apply. Profit.</footer>
+<script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.06});document.querySelectorAll(".sec .wrap").forEach(el=>{el.classList.add("fade");io.observe(el)});</script>
+</body></html>
