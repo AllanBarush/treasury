@@ -261,8 +261,8 @@ h1,h2,h3,h4,h5,h6{color:#FFFFFF !important}
  </div>
  <div><label class="rm-lb">Tipo de registro</label>
  <select class="rm-in" name="tipo_interes" onchange="var individual=this.value==='individual',form=this.form;['puesto','empresa','sector'].forEach(function(name){var field=form.elements[name];if(field)field.required = false;});">
- <option value="" disabled selected></option>
- <option value="individual">Inscripción individual</option>
+ <option value="" disabled></option>
+ <option value="individual" selected>Inscripción individual</option>
  <option value="grupo">Grupo o delegación</option>
  <option value="licencia_corporativa">Licencia / cohorte corporativa</option>
  </select>
