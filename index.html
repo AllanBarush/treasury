@@ -256,11 +256,11 @@ h1,h2,h3,h4,h5,h6{color:#FFFFFF !important}
  <form id="rm-lead" onsubmit="return rmSubmit(event)" style="display:grid;gap:22px;">
  <div><label class="rm-lb">Nombre(s)</label><input class="rm-in" name="nombre" required></div>
  <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
- <div><label class="rm-lb">Apellido paterno</label><input class="rm-in" name="apellido_paterno" required></div>
+ <div><label class="rm-lb">Apellido paterno</label><input class="rm-in" name="apellido_paterno"></div>
  <div><label class="rm-lb">Apellido materno</label><input class="rm-in" name="apellido_materno"></div>
  </div>
  <div><label class="rm-lb">Tipo de registro</label>
- <select class="rm-in" name="tipo_interes" required onchange="var individual=this.value==='individual',form=this.form;['puesto','empresa','sector'].forEach(function(name){var field=form.elements[name];if(field)field.required=!individual;});">
+ <select class="rm-in" name="tipo_interes" onchange="var individual=this.value==='individual',form=this.form;['puesto','empresa','sector'].forEach(function(name){var field=form.elements[name];if(field)field.required = false;});">
  <option value="" disabled selected></option>
  <option value="individual">Inscripción individual</option>
  <option value="grupo">Grupo o delegación</option>
@@ -270,11 +270,11 @@ h1,h2,h3,h4,h5,h6{color:#FFFFFF !important}
  </div>
  <div><label class="rm-lb">Email corporativo o institucional</label><input class="rm-in" type="email" name="email" required></div>
  <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
- <div><label class="rm-lb">Puesto</label><input class="rm-in" name="puesto" required></div>
- <div><label class="rm-lb">Institución / Empresa</label><input class="rm-in" name="empresa" required></div>
+ <div><label class="rm-lb">Puesto</label><input class="rm-in" name="puesto"></div>
+ <div><label class="rm-lb">Institución / Empresa</label><input class="rm-in" name="empresa"></div>
  </div>
  <div><label class="rm-lb">Sector financiero / industria</label>
- <select class="rm-in" name="sector" required>
+ <select class="rm-in" name="sector">
  <option value="" disabled selected></option>
  <option>AFORE / Fondos de Pensión</option>
  <option>Aseguradora / Insurance</option>
@@ -292,7 +292,7 @@ h1,h2,h3,h4,h5,h6{color:#FFFFFF !important}
  </div>
  <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
  <div><label class="rm-lb">País</label>
- <select class="rm-in" name="pais" required>
+ <select class="rm-in" name="pais">
  <option value="" disabled data-iso=""></option>
  <option data-iso="mx" selected>México</option>
  <option data-iso="us">Estados Unidos</option>
