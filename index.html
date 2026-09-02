@@ -328,7 +328,7 @@ h1,h2,h3,h4,h5,h6{color:#FFFFFF !important}
  <p style="font-size:10.5px;color:#B4C8E6;margin:0;text-align:center;font-family:'Poppins',Arial,sans-serif;letter-spacing:.4px;">Te enviamos un código a tu correo · Datos protegidos</p>
  </form>
  <div id="rm-verify" style="display:none;"></div>
- <div id="rm-thanks" style="display:none;border:1px solid #b7e4c7;background:#0E142A;color:#1b4332;padding:22px;border-radius:6px;font-size:14.5px;font-family:'Lora',Georgia,serif;line-height:1.6;"><b>Listo.</b> Recibimos y verificamos tu correo. Te enviamos el temario a tu correo y un asesor te contactará.</div>
+ <div id="rm-thanks" style="display:none;border:1px solid #b7e4c7;background:#0E142A;color:#B4C8E6;padding:22px;border-radius:6px;font-size:14.5px;font-family:'Lora',Georgia,serif;line-height:1.6;"><b>Listo.</b> Recibimos y verificamos tu correo. Te enviamos el temario a tu correo y un asesor te contactará.</div>
  <div style="margin-top:34px;padding-top:28px;border-top:1px solid #edf0f5;text-align:center;">
  <div style="font-size:10px;color:#B4C8E6;letter-spacing:2.2px;font-family:'Poppins',Arial,sans-serif;">O INSCRÍBETE Y PAGA DIRECTO</div>
  <div style="font-size:30px;font-weight:300;color:#FFFFFF;margin:14px 0 2px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">MXN $53,000 <span style="font-size:15px;font-weight:400;color:#B4C8E6;letter-spacing:.5px;">+ TAX</span></div>
@@ -363,32 +363,32 @@ if(!phone){phone=(d.whatsapp||"").trim().replace(/[\s\-()]/g,"");if(phone&&!phon
 d.phone=phone;d.apellido=((d.apellido_paterno||"")+" "+(d.apellido_materno||"")).trim();
 var so=f.pais&&f.pais.options[f.pais.selectedIndex];d.pais=(so&&so.text)||d.pais||"";d.pais_iso=((so&&so.dataset.iso)||"").toUpperCase();
 d.curso=RM_CFG.id;d.folleto=RM_CFG.folleto;d.privacidad=true;RM_LEAD=d;
-const b=f.querySelector('button[type=submit]');const txt=b.textContent;b.textContent="ENVIANDO CODIGO...";b.disabled=true;let res;
+const b=f.querySelector('button[type=submit]');const txt=b.textContent;b.textContent="ENVIANDO CÓDIGO...";b.disabled=true;let res;
 try{res=await rmPost(Object.assign({action:"start"},d));}catch(_){res={};}
 if(res&&res.need_corporate){b.textContent=txt;b.disabled=false;rmCorporativo(res.contacto||{});return false;}
 if(res&&res.ok){f.style.display="none";rmShowCode(d.email);}
-else{b.textContent=txt;b.disabled=false;alert((res&&res.error)||"No pudimos enviar el codigo. Escribenos a growth@riskmathics.com");}
+else{b.textContent=txt;b.disabled=false;alert((res&&res.error)||"No pudimos enviar el código. Escríbenos a growth@riskmathics.com");}
 return false;}
 function rmCorporativo(c){var box=document.getElementById('rm-verify');
 box.innerHTML='<div style="border:1px solid #f0d9a8;background:#0E142A;padding:22px;border-radius:6px;">'+
 '<p style="margin:0 0 14px;font-size:15px;color:#FFFFFF;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Para enviarte el temario necesitamos tu <b>correo institucional o de empresa</b>.</p>'+
-'<p style="margin:0 0 18px;font-size:14px;color:#93A5C0;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Si no cuentas con uno, escribenos y con gusto te atendemos:</p>'+
+'<p style="margin:0 0 18px;font-size:14px;color:#93A5C0;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Si no cuentas con uno, escríbenos y con gusto te atendemos:</p>'+
 '<div style="display:grid;gap:10px;">'+
-'<a href="'+(c.whatsapp||"https://wa.me/525579894034")+'" target="_blank" rel="noopener" style="background:#25D366;color:#fff;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;text-align:center;font-family:\'Poppins\',Arial,sans-serif;">Escribenos por WhatsApp</a>'+
+'<a href="'+(c.whatsapp||"https://wa.me/525579894034")+'" target="_blank" rel="noopener" style="background:#25D366;color:#fff;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;text-align:center;font-family:\'Poppins\',Arial,sans-serif;">Escríbenos por WhatsApp</a>'+
 '<a href="tel:'+(c.telefono||"+525579894034").replace(/\s/g,"")+'" style="border:1.5px solid #0E142A;color:#FFFFFF;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:13px;border-radius:4px;text-decoration:none;text-align:center;font-family:\'Poppins\',Arial,sans-serif;">Llamar '+(c.whatsapp_texto||"+52 55 7989 4034")+'</a>'+
 '<a href="mailto:'+(c.correo||"growth@riskmathics.com")+'?subject=Informes%20'+encodeURIComponent(RM_CFG.id)+'" style="border:1.5px solid #182644;color:#93A5C0;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:13px;border-radius:4px;text-decoration:none;text-align:center;font-family:\'Poppins\',Arial,sans-serif;">'+(c.correo||"growth@riskmathics.com")+'</a>'+
 '</div><p style="margin:16px 0 0;font-size:12px;color:#B4C8E6;font-family:\'Lora\',Georgia,serif;font-style:italic;text-align:center;">O corrige tu correo arriba e intenta de nuevo.</p></div>';
 box.style.display="block";box.scrollIntoView({behavior:"smooth",block:"center"});}
 function rmShowCode(email){var c=document.getElementById('rm-verify');
-c.innerHTML='<p style="margin:0 0 20px;font-size:14.5px;color:#FFFFFF;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Te enviamos un <b>codigo</b> a <b>'+email+'</b>. Escribelo aqui para recibir tu temario:</p>'+
+c.innerHTML='<p style="margin:0 0 20px;font-size:14.5px;color:#FFFFFF;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Te enviamos un <b>codigo</b> a <b>'+email+'</b>. Escríbelo aqui para recibir tu temario:</p>'+
 '<div style="margin-bottom:24px;"><label style="display:block;font-family:\'Poppins\',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#B4C8E6;text-transform:uppercase;margin-bottom:4px;">Codigo de 6 digitos</label>'+
 '<input id="rm-otp-email" inputmode="numeric" maxlength="6" style="width:100%;border:none;border-bottom:1px solid #182644;padding:9px 1px 10px;font-size:22px;letter-spacing:8px;font-family:\'Poppins\',Arial,sans-serif;color:#FFFFFF;outline:none;"></div>'+
 '<button type="button" onclick="rmVerify()" style="width:100%;background:#060A16;color:#ffffff;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:16px;border-radius:4px;cursor:pointer;font-family:\'Poppins\',Arial,sans-serif;">Verificar y recibir temario</button>'+
 '<p id="rm-vmsg" style="font-size:11.5px;color:#B4C8E6;margin-top:10px;font-family:\'Lora\',Georgia,serif;"></p>'+
-'<p style="font-size:11.5px;color:#B4C8E6;margin-top:14px;font-family:\'Lora\',Georgia,serif;">No te llego? Revisa tu bandeja de no deseados o escribenos a <a href="mailto:growth@riskmathics.com" style="color:#FFFFFF;">growth@riskmathics.com</a></p>';
+'<p style="font-size:11.5px;color:#B4C8E6;margin-top:14px;font-family:\'Lora\',Georgia,serif;">No te llego? Revisa tu bandeja de no deseados o escríbenos a <a href="mailto:growth@riskmathics.com" style="color:#FFFFFF;">growth@riskmathics.com</a></p>';
 c.style.display="block";var i=document.getElementById('rm-otp-email');if(i)i.focus();}
 async function rmVerify(){var ecode=(document.getElementById('rm-otp-email').value||"").trim();var m=document.getElementById('rm-vmsg');
-if(ecode.length<4){m.textContent="Escribe el codigo que te enviamos por correo.";return;}
+if(ecode.length<4){m.textContent="Escribe el código que te enviamos por correo.";return;}
 m.textContent="Verificando...";var res;
 try{res=await rmPost(Object.assign({action:"check",email_code:ecode},RM_LEAD,{action:"check",email_code:ecode}));}catch(_){res={};}
 if(res&&res.verified){document.getElementById('rm-verify').style.display="none";document.getElementById('rm-thanks').style.display="block";if(RM_CFG.folleto)window.open(RM_CFG.folleto,'_blank');}
